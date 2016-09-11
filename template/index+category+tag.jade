@@ -1,0 +1,13 @@
+extends base
+
+block title
+    if request.url_without_host == "/"
+        title= site.title
+    else
+		title= request.get_offset_path(1)
+
+block content
+    .main_wrap
+        .list.clearfix
+			include include/postList
+            include include/paginator

@@ -1,0 +1,10 @@
+extends base
+
+block head
+    +h.load('markdown')
+
+block content
+    .post_wrap
+        include include/postDetail
+        #fb_comments_container
+            +utils.html_comments(post)

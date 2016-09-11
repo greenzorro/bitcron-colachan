@@ -1,0 +1,191 @@
+.left_to_right{
+    writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-lr;
+    -webkit-text-orientation: upright;
+}
+
+@mixin cjk_punctuation(){
+    .cjk_punctuation{
+          color: #cc2e34;
+        }
+
+    .cjk_punctuation_h{
+      .wrap{
+            position: relative;
+            left: 0.3em;
+            top: -0.35em;
+      }
+    }
+
+}
+
+
+
+body{
+    -webkit-text-size-adjust: none;
+    font-family: 'PT Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+a{
+    color: #666;
+    text-decoration: none;
+
+    &:hover{
+        color: #111;
+    }
+}
+
+
+.homepage{
+    max-width: 600px;
+    margin: 0 auto;
+
+
+}
+
+
+.homepage_body{
+
+    margin-top: 100px;
+
+    @extend .left_to_right;
+
+    max-height: 300px;
+
+    @include cjk_punctuation();
+
+    h1.title{
+        color: #111;
+        font-weight: normal;
+        margin-right: 0.5em;
+    }
+
+    .posts_in_home{
+        background-position-x: right;
+        background-position-y: top;
+
+        font-size: 16px;
+        line-height: 50px;
+        letter-spacing: 3px;
+        border-left: 1px solid #eee;
+        a{
+            width: 50px;
+            display: block;
+            overflow: hidden;
+            word-break: break-all;
+            &:hover{
+                color: #b34949;
+            }
+        }
+    }
+
+
+
+
+}
+
+
+.paginator{
+    margin-top: 50px;
+    .pre{
+        float: left;
+    }
+    .next{
+        float: right;
+    }
+
+    a{
+        &:hover{
+            color: indianred;
+        }
+    }
+}
+
+.post_container{
+    padding-left: 130px;
+}
+
+
+.post{
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+
+    .caption{
+        position: absolute;
+        left: -140px;
+        top: 40px;
+        border-right: 1px solid #eee;
+
+        .title{
+            padding-top: 20px;
+            padding-right: 5px;
+            font-size: 28px;
+            font-weight: normal;
+            color: #111;
+            @extend .left_to_right;
+            @include cjk_punctuation();
+        }
+
+        a{
+            display: block;
+            font-size: 11px;
+            text-align: center;
+            color: red;
+            margin-top: 20px;
+        }
+    }
+
+    .content{
+        // font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+        font-size: 14px;
+        color: #555;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+
+
+
+.markdown {
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 2.5em 0 1.3em 0;
+        font-family: hy;
+        letter-spacing: 5px;
+        font-weight: normal;
+        color: #000;
+    }
+
+
+    pre{
+        border: 1px solid #e6e6e6;
+        border-left: none;
+        border-right: none;
+        margin-top: 1.2em;
+        margin-bottom: 2.2em;
+        padding: 15px 20px;
+        display: block;
+        overflow: auto;
+        background: #fdfdfd;
+    }
+
+    a{
+        color: #111;
+        font-weight: bold;
+    }
+
+    blockquote{
+        color: #777;
+        border-left-color: #da5051;
+        border-left-width: 3px;
+    }
+}

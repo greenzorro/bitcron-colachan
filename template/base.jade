@@ -1,0 +1,30 @@
+html
+    head
+        block title
+            title= post.title or site.title
+        +h.seo
+        include include/headMeta.jade
+        include include/favicon.jade
+        block head
+        +h.load('/template/css/reset.css', '/template/css/fonts.css', '/template/css/style.scss')
+    body
+        main#body_wrapper
+            block header
+                if request.url_without_host == "/"
+                    .index_header
+                        include include/header
+                else
+                    include include/header
+            #main
+                block content
+            block footer
+                include include/footer
+
+        +h.load("/template/js/jquery2-latest.js")
+        if request.url_without_host == "/works"
+            +h.load('/template/frameworks/fancybox/jquery.fancybox.js', '/template/frameworks/fancybox/jquery.fancybox.css', '/template/frameworks/fancybox/jquery.mousewheel-3.0.6.pack.js')
+        +h.load("/template/js/functions.coffee", "/template/js/test.js")
+
+        //- include include/statistic.jade
+
+        +h.debug_template
