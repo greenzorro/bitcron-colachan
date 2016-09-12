@@ -1,12 +1,23 @@
+//- header，这部分内容多且杂，通过显示/隐藏其中特定部分，适应不同终端各不相同的响应式效果
+
 header.header.clearfix
+
+	//- 移动端的菜单按钮
 	.menu
 		a.icon-icon_menu(href="javascript:;")
+
+	//- 搜索框
 	.search
 		input(type="text", data-role="none")
 		a.icon-icon_search(href="javascript:;")
+
+	//- 网站标题
 	h1.title
 		a(href='/') Cola Chan
+
 	.menu_wrapper
+
+		//- 详细的日志分类在手机上才会显示出来
 		nav.categories
 			li
 				a(href="/category/生活")
@@ -44,6 +55,8 @@ header.header.clearfix
 				a(href="/category/梦境")
 					span.icon-cat_dream
 					|梦境
+
+		//- 主导航
 		nav.nav
 			li
 				a(href="/categories") 日志分类
@@ -56,6 +69,8 @@ header.header.clearfix
 				//-模版中也有一套设计作品展示页面，把url改成"/works"即可
 			li
 				a(href="/about") 关于可乐橙
+
+	//- 网站简介、公众号二维码，PC上主页才会显示
 	.intro
 		p.text
 			|可乐橙每周翻译国外设计精华
@@ -70,6 +85,8 @@ header.header.clearfix
 						|关注微信公众号[可乐橙]
 						br
 						|国外优秀设计装进口袋
+
+	//- 社交媒体，PC上主页才会显示
 	.follow
 		.social
 			a.weibo(href="http://weibo.com/greenzorro", target="_blank") 微博
@@ -77,5 +94,7 @@ header.header.clearfix
 			a.pinterest(href="https://www.pinterest.com/greenzorro/", target="_blank") Pinterest
 			a.behance(href="https://www.behance.net/greenzorro", target="_blank") behance
 			a.github(href="https://github.com/greenzorro", target="_blank") Github
+	
+	//- 跳动的下箭头，点击滚动到日志列表部分，PC上主页才会显示
 	.down
 		a.icon-arrow2_down(href="#content")

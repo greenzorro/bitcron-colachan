@@ -1,30 +1,49 @@
+//- 基本页面，所有的页面都按此结构渲染，公用部分相同，可变部分各页面自己控制
+
 html
     head
         block title
             title= post.title or site.title
         +h.seo
+
+        //- 各种浏览器meta，主要用于移动端，禁用缩放、禁止自动识别手机号之类的
         include include/headMeta.jade
+
+        //- favicon专用代码
         include include/favicon.jade
+
         block head
+
+        //- reset.css是样式初始化，fonts.css是图标字体和特殊字体，style.scss是模板页面样式
         +h.load('/template/css/reset.css', '/template/css/fonts.css', '/template/css/style.scss')
+
     body
         main#body_wrapper
             block header
+
+                //- 网站主页的header多增加一个.index_header的class名，用于实现主页的首屏大图效果，内页则隐藏这部分
                 if request.url_without_host == "/"
                     .index_header
                         include include/header
                 else
                     include include/header
+
             #main
                 block content
             block footer
                 include include/footer
 
         +h.load("/template/js/jquery2-latest.js")
-        if request.url_without_host == "/works"
-            +h.load('/template/frameworks/fancybox/jquery.fancybox.js', '/template/frameworks/fancybox/jquery.fancybox.css', '/template/frameworks/fancybox/jquery.mousewheel-3.0.6.pack.js')
-        +h.load("/template/js/functions.coffee", "/template/js/test.js")
 
-        //- include include/statistic.jade
+        //- 在作品页面额外加载fancybox插件，因为要用到图片弹窗
+        if request.url_without_host == "/works"
+            //- 请注意许多第三方库的文件名，因为官方文档写道：文件路径中不要出现“.”、“#”以及非英文字符。
+            +h.load("/template/frameworks/fancybox/jquery-fancybox-pack.js", "/template/frameworks/fancybox/jquery-fancybox.css", "/template/frameworks/fancybox/jquery-mousewheel-3-0-6-pack.js")
+        
+        //- 模板的主要js代码
+        +h.load("/template/js/functions.coffee")
+
+        //- 统计代码，请到此文件中自行替换
+        include include/statistic.jade
 
         +h.debug_template

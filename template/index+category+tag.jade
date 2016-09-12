@@ -1,13 +1,21 @@
+//- 各种常规列表页，包括：主页、搜索结果页、某个分类的日志列表、某个标签的日志列表
+
 extends base
 
 block title
+
+	//- 如果是主页，网站标题显示网站名；如果不是，则显示日志分类名或标签名
     if request.url_without_host == "/"
         title= site.title
     else
 		title= request.get_offset_path(1)
 
 block content
-    .main_wrap
+    .main_wrap(name="content")
         .list.clearfix
+
+        	//- 日志列表
 			include include/postList
+
+			//- 翻页
             include include/paginator

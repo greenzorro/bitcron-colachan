@@ -1,6 +1,8 @@
+//- 日志列表
+
 for post in posts
 	if post.cover
-		//- post with imgs
+		//- 有图片的日志，取第一张图关联，可以用于实现缩略图
 		article.post.img(bg=post.cover)
 			.content
 				h1.title
@@ -20,7 +22,7 @@ for post in posts
 							for tag in post.tags
 								a(href="/tag/{{tag}}")= tag
 	else
-		//- post with only text
+		//- 没有图片的日志
 		article.post.text
 			.content
 				h1.title

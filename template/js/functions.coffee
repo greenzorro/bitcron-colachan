@@ -8,10 +8,11 @@ window.onload = ->
     pageFunc.imgContain()  #详情页段落是否包含图片
     pageFunc.movies()  #电影收藏
     pageFunc.works()  #设计作品
+    pageFunc.aboutProgress()  #关于页面的环形进度条
 
     #插件效果
     plugin.fancybox()  #fancybox弹窗相册
-    plugin.smoothSlide()  #锚链接平滑移动
+    plugin.smoothScroll()  #锚链接平滑滚动
 
 
 
@@ -91,6 +92,14 @@ pageFunc =
             workItem = document.getElementsByClassName("pic")[0].getElementsByTagName "a"
             $(item).replaceWith "<img src='#{$(item).attr "href"}'>" for item in workItem
 
+    # 关于页面的环形进度条
+    aboutProgress: ->
+        if document.getElementById("about")?
+            $("#about").ready ->
+                progress = document.getElementsByClassName "circle_progress"
+                for item in progress
+                    percentage = parseInt($(item).find(".center span").html().split("%")[0])/100
+                    plugin.setPercentage 0, percentage, $(item)  #初始化进度条
 
 
 
@@ -100,6 +109,65 @@ pageFunc =
 #########################################################################
 
 plugin =
+
+    # 设置进度条，3个参数分别为：旧百分比、新百分比、作用对象
+    setPercentage: (m,n,obj) ->
+        speed = 0.5  #设置动画时长（单位：秒）
+        resetTime = ->  #重置延迟与动画时间
+            obj.find(".pie_wrap span").css {
+                "-webkit-transition-delay": "0",
+                "transition-delay": "0",
+                "-webkit-transition-duration": speed + "s",
+                "transition-duration": speed + "s"
+            }
+        if n >= 0 and n < 0.5  #是否低于50%
+            if m >= 0.5  #跨越50%时，动画分两段播放，将第二段延迟
+                resetTime()  #重置延迟与动画时间
+                obj.find(".pie_left").css {
+                    # 计算左半环的动画时间
+                    "-webkit-transition-duration": speed/(m-n)*(m-0.5) + "s",
+                    "transition-duration": speed/(m-n)*(m-0.5) + "s"
+                }
+                obj.find(".pie_right").css {
+                    # 计算右半环的动画时间
+                    "-webkit-transition-duration": speed/(m-n)*(0.5-n) + "s",
+                    "transition-duration": speed/(m-n)*(0.5-n) + "s",
+                    # 将左半环动画时间，设置为右半环的延迟
+                    "-webkit-transition-delay": speed/(m-n)*(m-0.5) + "s",
+                    "transition-delay": speed/(m-n)*(m-0.5) + "s"
+                }
+            obj.find(".pie_right").css {  #将右半环转到相应位置
+                "-webkit-transform": "rotate(#{n*360}deg)",
+                "transform": "rotate(#{n*360}deg)"
+            }
+            obj.find(".pie_left").css {  #将左半环转到默认位置
+                "-webkit-transform": "rotate(0deg)",
+                "transform": "rotate(0deg)"
+            }
+        else if n >= 0.5 && n <= 1  #是否超过50%
+            if m <= 0.5  #跨越50%时，动画分两段播放，将第二段延迟
+                resetTime()  #重置延迟与动画时间
+                obj.find(".pie_right").css {
+                    # 计算右半环的动画时间
+                    "-webkit-transition-duration": speed/(n-m)*(0.5-m) + "s",
+                    "transition-duration": speed/(n-m)*(0.5-m) + "s"
+                }
+                obj.find(".pie_left").css {
+                    # 计算左半环的动画时间
+                    "-webkit-transition-duration": speed/(n-m)*(n-0.5) + "s",
+                    "transition-duration": speed/(n-m)*(n-0.5) + "s",
+                    # 将右半环动画时间，设置为左半环的延迟
+                    "-webkit-transition-delay": speed/(n-m)*(0.5-m) + "s",
+                    "transition-delay": speed/(n-m)*(0.5-m) + "s"
+                }
+            obj.find(".pie_right").css {  #将右半环转到默认位置
+                "-webkit-transform": "rotate(180deg)",
+                "transform": "rotate(180deg)"
+            }
+            obj.find(".pie_left").css {  #将左半环转到相应位置
+                "-webkit-transform": "rotate(#{(n-0.5)*360}deg)",
+                "transform": "rotate(#{(n-0.5)*360}deg)"
+            }
 
     # fancybox弹窗相册
     fancybox: ->
@@ -112,8 +180,8 @@ plugin =
                 nextClick : true
             }
 
-    # 锚链接平滑移动
-    smoothSlide: ->
+    # 锚链接平滑滚动
+    smoothScroll: ->
         $("a[href*='#']").click (e) ->
             if location.pathname.replace(/^\//, '') is this.pathname.replace(/^\//, '') and location.hostname is this.hostname
                 e.preventDefault()  #防止页面跳动

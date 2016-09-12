@@ -1,3 +1,5 @@
+//- 设计作品页面，可以作为各类图片幻灯片使用
+
 extends base
 
 block title
@@ -212,7 +214,7 @@ block content
 		.page_wrap
 			#fb_comments_container
 				.ds-thread(data-thread-key="works", data-title="设计作品", data-url="http://colachan.com/works")
-				script(type="text/javascript").
+				script
 					var duoshuoQuery = {short_name:"greenzorro"};
 					(function() {
 						var ds = document.createElement('script');
