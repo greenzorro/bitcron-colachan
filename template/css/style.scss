@@ -702,22 +702,22 @@ input, textarea, button {
 	p, pre, iframe {
 		display: block;
 		line-height: 1.6;
-		margin: 0 0 1.5em;
+		margin: 1.5em 0;
 	}
 	.xiami-player { margin: 0 0 1.5em;} //虾米音乐播放组件
 	i, em { font-style: italic;}
 	b, strong { font-weight: bold;}
 	ul {
-		margin: 0 0 1.2em;
+		margin: 1.2em 0;
 		padding: 0 0 0 2em;
 		list-style: disc;}
 	ol {
-		margin: 0 0 1.2em;
+		margin: 1.2em 0;
 		padding: 0 0 0 2em;
 		list-style: decimal;}
 	blockquote {
 		padding: 1.5em 1.8em;
-		margin: 0 0 1.2em;
+		margin: 1.2em 0;
 		background: $bg3;
 		border-left: 2px solid darken($bg3, 10%);
 		font-size: 0.8em;
@@ -734,7 +734,7 @@ input, textarea, button {
 	table {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		margin: 0 0 1em;
+		margin: 1em 0;
 		width: 100%;
 		max-width: 100%;
 		border-width: 1px;
@@ -760,7 +760,7 @@ input, textarea, button {
 	table tbody > tr:nth-child(odd) > td, table tbody > tr:nth-child(odd) > th {
 		background-color: #f9f9f9;}
 	.gist {
-		margin: 0 0 1em;
+		margin: 1em 0;
 		font-size: 12px;}
 	.gist table {
 		margin: 0;
@@ -1045,16 +1045,13 @@ input, textarea, button {
 			left: 5%;
 			top: 3.2em;}
 		.post_body {
-			padding: 1em 0;
+			padding: 0 0 1em;
 			p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote {
 				margin-left: 15px;
 				margin-right: 15px;}
 			.xiami-player { //虾米音乐播放组件
 				margin-left: 15px;
 				margin-right: 15px;}
-			p.img_inside {
-				margin-left: 0;
-				margin-right: 0;}
 			img { width: 100%;}
 			.xiami-player img { width: auto;} //虾米音乐播放组件
 		}

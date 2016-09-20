@@ -5,7 +5,6 @@ window.onload = ->
     pageFunc.searchForm()  #搜索框
     pageFunc.qrCode()  #二维码
     pageFunc.listType()  #列表页文章增加背景图
-    pageFunc.imgContain()  #详情页段落是否包含图片
     pageFunc.movies()  #电影收藏
     pageFunc.works()  #设计作品
     pageFunc.aboutProgress()  #关于页面的环形进度条
@@ -70,12 +69,6 @@ pageFunc =
                     $(item).removeAttr "style" for item in imgs
             setBg()
             window.onresize = -> setBg()  #改变窗口大小
-
-    # 详情页段落是否包含图片
-    imgContain: ->
-        if document.getElementsByClassName("detail")[0]?  #处于详情页
-            para = document.getElementsByClassName("post_body")[0].getElementsByTagName "p"
-            $(item).addClass "img_inside" for item in para when $(item).find("img").length
 
     # 电影收藏
     movies: ->
