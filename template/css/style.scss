@@ -700,6 +700,7 @@ input, textarea, button {
 		border-left: 0.2em solid $primary2;
 	}
 	p, pre, iframe {
+		display: block;
 		line-height: 1.6;
 		margin: 0 0 1.5em;
 	}
