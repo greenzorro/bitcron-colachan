@@ -29,14 +29,14 @@ $easing1: cubic-bezier(0.15, 0.95, 0.41, 0.95);
 
 
 // responsive break points
-$phone_portrait-max: 29.99em;  //479px
-$phone_landscape-min: 30em;  //480px
-$phone_landscape-max: 47.99em;  //767px
-$pad_portrait-min: 48em;  //768px
-$pad_portrait-max: 63.99em;  //1023px
-$pad_landscape-min: 64em;  //1024px
-$pad_landscape-max: 74.99em;  //1199px
-$pc-min: 75em;  //1200px
+$phone_portrait-max: 479px;
+$phone_landscape-min: 480px;
+$phone_landscape-max: 767px;
+$pad_portrait-min: 768px;
+$pad_portrait-max: 1023px;
+$pad_landscape-min: 1024px;
+$pad_landscape-max: 1199px;
+$pc-min: 1200px;
 
 
 // functions
@@ -128,15 +128,15 @@ input, textarea, button {
 // pc
 @media only screen and (min-width: $pc-min){
 	.main_wrap {
-		max-width: 68.75em;  //1100px
+		max-width: 1100px;
 		margin: auto;
 		position: relative;}
 	.post_wrap {
-		max-width: 45em;  //720px
+		max-width: 720px;
 		margin: auto;
 		position: relative;}
 	.page_wrap {
-		max-width: 75em;  //1200px
+		max-width: 1200px;
 		margin: auto;
 		position: relative;}
 }
@@ -794,6 +794,12 @@ input, textarea, button {
 		h5 { font-size: 1em;}
 		h6 { font-size: 0.8em;}
 	}
+}
+
+
+//***************************  pagination  ****************************//
+
+.toc {
 }
 
 
