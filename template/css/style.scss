@@ -24,6 +24,7 @@ $accent2: #f5c5bf;
 $accent3: #3c3d60;
 $shadow1: 0 1px 4px rgba(0,0,0,0.35);
 $shadow2: 0 4px 4px rgba(0,0,0,0.35);
+$shadow3: inset 0 0 1px $dark4;
 $bg_img: url(/template/images/bg.jpg);
 $easing1: cubic-bezier(0.15, 0.95, 0.41, 0.95);
 
@@ -104,10 +105,14 @@ $pc-min: 1200px;
 * { @include box-sizing (content-box);}
 html, body{
 	height:100%;}
+html {
+	line-height: 1;
+	font-size: 100px;
+}
 body {
-	line-height: 1.6;
 	font-family: -apple-system,Helvetica,Arial,"PingFang SC","Source Han Sans SC","Microsoft YaHei","WenQuanYi MicroHei",sans-serif;
-	font-size: 1em;
+	line-height: 1.6;
+	font-size: 0.16rem;
 	color: $dark1;
 	background: $bg2;}
 a { @include aColor ($primary1);}
@@ -123,7 +128,7 @@ input, textarea, button {
 // content width on several devices
 // phone
 @media only screen and (max-width: $phone_landscape-max){
-	#main { padding: 3.5em 0 0;}
+	#main { padding: 0.56rem 0 0;}
 }
 // pc
 @media only screen and (min-width: $pc-min){
@@ -157,43 +162,43 @@ input, textarea, button {
 	.menu {
 		.icon-icon_menu {
 			display: inline-block;
-			width: 3.5em;
-			height: 3.5em;
-			line-height: 3.5em;
+			width: 0.56rem;
+			height: 0.56rem;
+			line-height: 0.56rem;
 			text-align: center;
 			color: $light1;
 			cursor: pointer;
-			&:before { font-size: 2em;}
+			&:before { font-size: 0.32rem;}
 		}
 	}
 	.search {
 		.icon-icon_search {
 			display: inline-block;
-			width: 3.5em;
-			height: 3.5em;
-			line-height: 3.5em;
+			width: 0.56rem;
+			height: 0.56rem;
+			line-height: 0.56rem;
 			text-align: center;
 			color: $light1;
 			cursor: pointer;
-			&:before { font-size: 2em;}
+			&:before { font-size: 0.32rem;}
 		}
 	}
 	.title {
 		a {
 			font-family: "Forum", sans-serif;
-			font-size: 1.5em;
+			font-size: 0.24rem;
 			@include aColor ($light1);}
 	}
 	.down {
 		.icon-arrow2_down {
 			display: inline-block;
-			width: 3.5em;
-			height: 3.5em;
-			line-height: 3.5em;
+			width: 0.56rem;
+			height: 0.56rem;
+			line-height: 0.56rem;
 			text-align: center;
 			color: $light1;
 			cursor: pointer;
-			&:before { font-size: 3em;}
+			&:before { font-size: 0.48rem;}
 		}
 	}
 }
@@ -201,7 +206,7 @@ input, textarea, button {
 @media only screen and (max-width: $phone_landscape-max){
 	.header {
 		width: 100%;
-		height: 3.5em;
+		height: 0.56rem;
 		background: $bg4;
 		position: absolute;
 		left: 0;
@@ -228,12 +233,12 @@ input, textarea, button {
 			top: 0;
 			input {
 				display: block;
-				width: 3.5em;
+				width: 0.56rem;
 				height: 46px;
 				margin: 5px 5px 0;
 				background: none;
-				font-size: 1em;
-				text-indent: 0.5em;
+				font-size: 0.16rem;
+				text-indent: 0.08rem;
 				color: $light1;
 				opacity: 0;
 				cursor: pointer;
@@ -255,8 +260,8 @@ input, textarea, button {
 		}
 		.title {
 			width: 100%;
-			height: 3.5em;
-			line-height: 3.5em;
+			height: 0.56rem;
+			line-height: 0.56rem;
 			text-align: center;
 			opacity: 1;
 			position: absolute;
@@ -272,25 +277,25 @@ input, textarea, button {
 			text-align: center;
 			position: absolute;
 			left: 0;
-			top: 3.5em;
+			top: 0.56rem;
 			@include transition-transform (0.3s,$easing1);
 			@include transform-origin (0% 0%);
 			@include transform (scale(0));
 			.categories {
 				@include display-flex ();
 				@include flex-flow (row wrap);
-				padding: 0.8em 0 1.2em;
+				padding: 0.12rem 0 0.18rem;
 				border-bottom: 1px solid $dark4;
 				li {
 					a {
 						display: block;
 						height: 100%;
-						padding: 0.2em 1.2em;
+						padding: 0.03rem 0.18rem;
 						color: $dark1;
 						span {
 							display: block;
-							padding: 0.5em 0 0;
-							&:before { font-size: 3em;}
+							padding: 0.08rem 0 0;
+							&:before { font-size: 0.48rem;}
 						}
 					}
 				}
@@ -301,10 +306,11 @@ input, textarea, button {
 				@include justify-content (center);
 				clear: both;
 				li {
+					@include flex (1 1 auto);
 					a {
 						display: block;
 						color: $dark2;
-						font-size: 0.85em;}
+						font-size: 0.14rem;}
 				}
 			}
 		}
@@ -314,7 +320,7 @@ input, textarea, button {
 	.search_on {
 		.search {
 			width: auto;
-			left: 3.5em;
+			left: 0.56rem;
 			input {
 				width: 98%;
 				cursor: text;
@@ -323,30 +329,32 @@ input, textarea, button {
 		}
 		.title {
 			opacity: 0;
-			@include transform (translate(-1em, 0));}
+			@include transform (translate(-0.15rem, 0));}
 	}
 }
 // phone_portrait
 @media only screen and (max-width: $phone_portrait-max){
 	.header .menu_wrapper .categories li {
-		width: 33.3%;}
+		@include flex (0 1 33.3%);
+	}
 	.header .menu_wrapper .nav {
 		@include flex-flow (column);
 		a {
-			height: 3.5em * 0.85;
-			line-height: 3.5em * 0.85;
+			height: 0.4rem;
+			line-height: 0.4rem;
 			border-bottom: 1px solid $dark4;}
 	}
 }
 // phone_landscape
 @media only screen and (min-width: $phone_landscape-min) and (max-width: $phone_landscape-max){
 	.header .menu_wrapper .categories li {
-		width: 20%;}
+		@include flex (0 1 20%);
+	}
 	.header .menu_wrapper .nav {
 		a {
-			height: 4em;
-			line-height: 4em;
-			padding: 0 1.5em;}
+			height: 0.64rem;
+			line-height: 0.64rem;
+			padding: 0 0.2rem;}
 	}
 }
 // pad
@@ -362,13 +370,13 @@ input, textarea, button {
 			display: inline-block;
 			input {
 				display: block;
-				width: 3.5em;
-				height: 1.5em;
-				line-height: 1.5em;
-				padding: 0.8em 0;
+				width: 0.56rem;
+				height: 0.24rem;
+				line-height: 0.24rem;
+				padding: 0.12rem 0;
 				background: none;
-				font-size: 1em;
-				text-indent: 0.8em;
+				font-size: 0.16rem;
+				text-indent: 0.12rem;
 				opacity: 0;
 				cursor: pointer;
 				position: absolute;
@@ -379,8 +387,8 @@ input, textarea, button {
 				content: "";
 				display: block;
 				width: 0;
-				height: 1.5em;
-				padding: 0.8em 0;
+				height: 0.24rem;
+				padding: 0.12rem 0;
 				background: none;
 				position: absolute;
 				right: 0;
@@ -389,10 +397,10 @@ input, textarea, button {
 				@include transition (width 0.3s $easing1, background 0.3s $easing1);}
 		}
 		.title {
-			padding: 4.5em 0 1em;
+			padding: 0.72rem 0 0.15rem;
 			text-align: center;}
 		.menu_wrapper {
-			padding: 0 0 4.5em;
+			padding: 0 0 0.72rem;
 			.categories { display: none;}
 			.nav {
 				text-align: center;
@@ -400,9 +408,9 @@ input, textarea, button {
 					display: inline-block;
 					a {
 						display: inline-block;
-						padding: 0 0.75em;
+						padding: 0 0.12rem;
 						color: $light1;
-						font-size: 0.875em;}
+						font-size: 0.14rem;}
 				}
 			}
 		}
@@ -412,11 +420,11 @@ input, textarea, button {
 	.search_on {
 		.search {
 			input {
-				width: 20em;
+				width: 3.2rem;
 				cursor: text;
 				@include animation (fadein 0.3s $easing1 0.3s both);}
 			&:after {
-				width: 20em;
+				width: 3.2rem;
 				background: $bg1;
 				box-shadow: $shadow1;}
 		}
@@ -429,39 +437,39 @@ input, textarea, button {
 		.menu { display: none;}
 		.search {
 			float: right;
-			height: 1.875em;
-			margin: 0.94em 1em 0;
+			height: 0.3rem;
+			margin: 0.15rem 0.15rem 0;
 			background: $bg1;
-			border-radius: 1.875em;
+			border-radius: 0.3rem;
 			position: relative;
 			.icon-icon_search {
 				float: right;
-				width: 2em;
-				height: 1.875em;
-				line-height: 1.875em;
+				width: 0.32rem;
+				height: 0.3rem;
+				line-height: 0.3rem;
 				color: $dark1;
-				&:before { font-size: 1.5em;}
+				&:before { font-size: 0.24rem;}
 			}
 			input {
 				float: left;
 				display: block;
-				width: 3.75em;
+				width: 0.6rem;
 				height: 100%;
-				text-indent: 1em;
+				text-indent: 0.15rem;
 				color: $dark2;
 				@include transition (width 0.3s $easing1);
 				&:focus {
-					width: 12em;
+					width: 1.92rem;
 					color: $dark1;}
 			}
 		}
 		.title {
 			float: left;
-			height: 3.75em;
-			line-height: 3.75em;
+			height: 0.6rem;
+			line-height: 0.6rem;
 			a {
 				display: block;
-				padding: 0 1.5em;
+				padding: 0 0.24rem;
 				&:hover { color: $bg1;}
 			}
 		}
@@ -471,13 +479,13 @@ input, textarea, button {
 			.nav {
 				li {
 					display: inline-block;
-					height: 3.75em;
-					line-height: 3.75em;
+					height: 0.6rem;
+					line-height: 0.6rem;
 					a {
 						display: inline-block;
-						padding: 0 0.75em;
+						padding: 0 0.12rem;
 						color: $light1;
-						font-size: 0.875em;
+						font-size: 0.14rem;
 						position: relative;
 						z-index: 5;
 						&:after {
@@ -486,7 +494,7 @@ input, textarea, button {
 							width: 100%;
 							height: 60%;
 							background: $primary1;
-							border-radius: 0.2em;
+							border-radius: 0.03rem;
 							box-shadow: $shadow1;
 							position: absolute;
 							left: 0;
@@ -505,7 +513,7 @@ input, textarea, button {
 			clear: both;
 			display: none;
 			width: 100%;
-			padding: 3em 0 0;
+			padding: 0.5rem 0 0;
 			background: url(/template/images/slogen.png) no-repeat center top;
 			background-size: 405px 53px;
 			text-align: center;
@@ -518,40 +526,40 @@ input, textarea, button {
 			.qr {
 				.icon-icon_qr {
 					display: inline-block;
-					width: 5em;
-					height: 5em;
-					line-height: 5em;
+					width: 0.8rem;
+					height: 0.8rem;
+					line-height: 0.8rem;
 					color: $light1;
 					@include transition-transform (0.3s,$easing1);
 					@include transform-origin (50% 50%);
 					@include transform (scale(1,1));
-					&:before { font-size: 3em;}
+					&:before { font-size: 0.48rem;}
 					&:hover { @include transform (scale(1.1,1.1));}
 				}
 				.qr_code_wrap {
 					width: 100%;
 					position: absolute;
 					left: 0;
-					top: -3em;
+					top: -0.48rem;
 					@include transition-transform (0.3s,$easing1);
 					@include transform-origin (50% 36%);
 					@include transform (scale(0));
 					.qr_code {
-						width: 12em;
+						width: 1.92rem;
 						margin: 0 auto;
-						padding: 0 0 0.5em;
+						padding: 0 0 0.08rem;
 						background: $bg1;
 						box-shadow: $shadow2;
 						.img {
-							width: 12em;
-							height: 12em;
+							width: 1.92rem;
+							height: 1.92rem;
 							background: url(/template/images/qrcode.png) no-repeat center center;
 							background-size: cover;}
 						p {
 							line-height: 1.4;
-							padding: 0 0 0.3em;
+							padding: 0 0 0.05rem;
 							color: $dark1;
-							font-size: 0.9em;}
+							font-size: 0.14rem;}
 					}
 				}
 			}
@@ -567,23 +575,23 @@ input, textarea, button {
 			z-index: 4;
 			.social {
 				display: inline-block;
-				height: 1.5em;
-				padding: 0.3em 0.5em;
+				height: 0.24rem;
+				padding: 0.05rem 0.08rem;
 				border: 1px solid $light2;
-				border-radius: 0.2em;
+				border-radius: 0.03rem;
 				a {
 					display: inline-block;
 					background: url(/template/images/social.png) no-repeat;
 					background-size: 120px 24px;
-					width: 1.5em;
-					height: 1.5em;
+					width: 0.24rem;
+					height: 0.24rem;
 					overflow: hidden;
-					margin: 0 0.3em;
-					text-indent: -500em;
+					margin: 0 0.05rem;
+					text-indent: -100rem;
 					@include transition-transform (0.3s,$easing1);
 					@include transform-origin (50% 50%);
 					@include transform (translate(0,0));
-					&:hover { @include transform (translate(0,-0.1em));}
+					&:hover { @include transform (translate(0,-0.02rem));}
 				}
 				.weibo { background-position: -0px 0;}
 				.douban { background-position: -24px 0;}
@@ -629,28 +637,28 @@ input, textarea, button {
 }
 @media only screen and (min-width: $pc-min){
 	.footer {
-		padding: 2em 0;
+		padding: 0.3rem 0;
 		.logo {
 			width: 40px;
 			height: 46px;
-			margin: 0 auto 1em;
+			margin: 0 auto 0.15rem;
 			background: url(/template/images/logo.png) no-repeat center center;
 			background-size: 40px 46px;}
 		p {
-			line-height: 2em;
+			line-height: 0.32rem;
 			text-align: center;
 			color: $dark2;
-			font-size: 0.75em;
+			font-size: 0.12rem;
 			a {
 				color: $dark2;
 				&:hover { color: $primary1;}
 			}
-			i { padding: 0 0.3em;}
+			i { padding: 0 0.04rem;}
 		}
 		.gotop {
 			display: block;
-			width: 2.5em;
-			height: 2.5em;
+			width: 0.4rem;
+			height: 0.4rem;
 			overflow: hidden;
 			color: $bg1;
 			text-align: center;
@@ -663,10 +671,10 @@ input, textarea, button {
 			@include transform (scale(1));
 			@include animation (zoomin 0.3s $easing1);
 			&:before {
-				font-size: 1.5em;
+				font-size: 0.3rem;
 				position: absolute;
-				right: 0.2em;
-				bottom: 0.2em;
+				right: 0.03rem;
+				bottom: 0.03rem;
 				z-index: 2;}
 			&:after {
 				content: "";
@@ -693,40 +701,50 @@ input, textarea, button {
 	img { max-width: 100%;}
 	h1, h2, h3, h4, h5, h6 {
 		line-height: 1.2;
-		margin: 1.5em 0;
+		margin: 0.5rem 0 0.35rem;
 		font-weight: bold;}
 	h2 {
-		padding: 0 0 0 0.5em;
-		border-left: 0.2em solid $primary2;
+		padding: 0 0 0 0.15rem;
+		border-left: 0.04rem solid $primary2;
 	}
 	p, pre, iframe {
 		display: block;
 		line-height: 1.6;
-		margin: 1.5em 0;
+		margin: 0.25rem 0;
 	}
-	.xiami-player { margin: 0 0 1.5em;} //虾米音乐播放组件
+	.xiami-player { margin: 0 0 0.25rem;} //虾米音乐播放组件
 	i, em { font-style: italic;}
 	b, strong { font-weight: bold;}
 	ul {
-		margin: 1.2em 0;
-		padding: 0 0 0 2em;
+		margin: 0.25rem 0;
+		padding: 0 0 0 0.3rem;
 		list-style: disc;}
 	ol {
-		margin: 1.2em 0;
-		padding: 0 0 0 2em;
+		margin: 0.25rem 0;
+		padding: 0 0 0 0.3rem;
 		list-style: decimal;}
 	blockquote {
-		padding: 1.5em 1.8em;
-		margin: 1.2em 0;
-		background: $bg3;
-		border-left: 2px solid darken($bg3, 10%);
-		font-size: 0.8em;
+		padding: 0.15rem 0 0.15rem 0.15rem;
+		margin: 0.25rem 0;
+		background: $bg2;
+		font-size: 0.14rem;
+		position: relative;
 		p { margin: 0;}
+		&:after {
+			content: "“";
+			line-height: 1;
+			font-size: 1rem;
+			font-family: "Forum", sans-serif;
+			color: $dark4;
+			position: absolute;
+			left: -0.08rem;
+			top: -0.2rem;
+		}
 	}
 	hr {
 		width: 100%;
 		height: 1px;
-		margin: 3em 0;
+		margin: 0.25rem 0;
 		padding: 0;
 		background: none;
 		border: none;
@@ -734,7 +752,7 @@ input, textarea, button {
 	table {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		margin: 1em 0;
+		margin: 0.25rem 0;
 		width: 100%;
 		max-width: 100%;
 		border-width: 1px;
@@ -752,7 +770,7 @@ input, textarea, button {
 	tr th, tr td {
 		padding: 5px 20px;
 		border-right: 1px solid;
-		font-size: 1rem;}
+		font-size: 0.16rem;}
 	tr th:last-child, tr td:last-child {
 		border-right: 0px;}
 	table th {
@@ -760,7 +778,7 @@ input, textarea, button {
 	table tbody > tr:nth-child(odd) > td, table tbody > tr:nth-child(odd) > th {
 		background-color: #f9f9f9;}
 	.gist {
-		margin: 1em 0;
+		margin: 0.25rem 0;
 		font-size: 12px;}
 	.gist table {
 		margin: 0;
@@ -773,34 +791,82 @@ input, textarea, button {
 // phone
 @media only screen and (max-width: $phone_landscape-max){
 	.post_body {
-		font-size: 1.2em;
-		h1, h2, h3, h4, h5, h6 { letter-spacing: 0.02em;}
-		h1 { font-size: 1.8em;}
-		h2 { font-size: 1.5em;}
-		h3 { font-size: 1.2em;}
-		h4 { font-size: 1.1em;}
-		h5 { font-size: 1em;}
-		h6 { font-size: 0.8em;}
+		font-size: 0.2rem;
+		h1, h2, h3, h4, h5, h6 { letter-spacing: 0.004rem;}
+		h1 { font-size: 0.35rem;}
+		h2 { font-size: 0.28rem;}
+		h3 { font-size: 0.24rem;}
+		h4 { font-size: 0.21rem;}
+		h5 { font-size: 0.18rem;}
+		h6 { font-size: 0.16rem;}
+		blockquote { background: $bg3; }
 	}
 }
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
 	.post_body {
-		h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em;}
-		h1 { font-size: 2.2em;}
-		h2 { font-size: 1.8em;}
-		h3 { font-size: 1.5em;}
-		h4 { font-size: 1.2em;}
-		h5 { font-size: 1em;}
-		h6 { font-size: 0.8em;}
+		h1, h2, h3, h4, h5, h6 { letter-spacing: -0.003em;}
+		h1 { font-size: 0.35rem;}
+		h2 { font-size: 0.28rem;}
+		h3 { font-size: 0.24rem;}
+		h4 { font-size: 0.21rem;}
+		h5 { font-size: 0.18rem;}
+		h6 { font-size: 0.16rem;}
 	}
 }
 
 
-//***************************  pagination  ****************************//
+//******************************  toc  ********************************//
 
-.toc {
+/*body .post_body .toc {
+	display: none;
+	background: $bg1;
+	box-shadow: $shadow1;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	a {
+		display: block;
+		height: 0.4rem;
+		line-height: 2.5;
+		padding: 0 0 0 0.2rem;
+		font-size: 0.14rem;
+		color: $dark2;
+		&:hover {
+			background-color: $bg2;
+		}
+	}
+	& > ul {
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		& > li {
+			border-bottom: 1px solid $dark4;
+			& > a {
+				font-size: 0.16rem;
+				color: $dark1;
+			}
+		}
+	}
 }
+// phone
+@media only screen and (max-width: $phone_landscape-max){
+	.post_body .toc {
+		position: fixed;
+		left: 30%;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 19;
+	}
+}
+// pad and pc
+@media only screen and (min-width: $pad_portrait-min){
+	.post_body .toc {
+	}
+}*/
 
 
 //***************************  pagination  ****************************//
@@ -809,17 +875,11 @@ input, textarea, button {
 	width: 100%;
 	a {
 		display: block;
-		height: 2em;
-		line-height: 2em;
-		font-size: 2em;
+		font-size: 0.32rem;
 		text-align: center;}
 	.paging {
 		display: block;
 		@include aColor ($dark1);
-		.arrow {
-			width: 1.5em;
-			height: 2em;
-			line-height: 2em;}
 	}
 	.pre {
 		float: left;
@@ -839,8 +899,16 @@ input, textarea, button {
 // phone
 @media only screen and (max-width: $phone_landscape-max){
 	.pager {
+		a {
+			height: 0.48rem;
+			line-height: 0.48rem;
+		}
 		.paging {
 			width: 33%;
+			.arrow {
+				width: 0.48rem;
+				height: 0.48rem;
+				line-height: 0.48rem;}
 			span { display: none;}
 		}
 	}
@@ -855,16 +923,23 @@ input, textarea, button {
 // pad
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
 	.pager {
+		a {
+			height: 0.56rem;
+			line-height: 0.56rem;
+		}
 		.paging {
 			width: 33%;
-			.arrow { width: 1.8em;}
+			.arrow {
+				width: 0.56rem;
+				height: 0.56rem;
+				line-height: 0.56rem;}
 			span { display: none;}
 		}
 	}
 	.list .pager {
 		background: $bg1;
-		border-radius: 0.2em;
-		box-shadow: 0 0.1em 0.35em $dark3;}
+		border-radius: 0.03rem;
+		box-shadow: $shadow1;}
 	.detail .pager {
 		background: darken($bg1, 2.3%);
 		border-top: 1px solid $dark4;}
@@ -877,21 +952,28 @@ input, textarea, button {
 // pc
 @media only screen and (min-width: $pc-min){
 	.pager {
+		a {
+			height: 0.64rem;
+			line-height: 0.64rem;
+		}
 		.paging {
 			&:hover { color: $primary1;}
-			.arrow { width: 1.8em;}
+			.arrow {
+				width: 0.64rem;
+				height: 0.64rem;
+				line-height: 0.64rem;}
 			span {
-				max-width: 18em;
+				max-width: 1.44rem;
 				height: 100%;
 				overflow: hidden;
-				font-size: 0.5em;}
+				font-size: 0.14rem;}
 		}
 		.gotop { display: none;}
 	}
 	.list .pager {
 		background: $bg1;
-		border-radius: 0.2em;
-		box-shadow: 0 0.1em 0.35em $dark3;}
+		border-radius: 0.03rem;
+		box-shadow: $shadow1;}
 	.detail .pager {
 		background: darken($bg1, 2.3%);
 		border-top: 1px solid $dark4;}
@@ -916,28 +998,27 @@ input, textarea, button {
 		@include display-flex ();
 		@include flex-flow (row wrap);
 		.post {
-			@include flex (1 17.75em);
-			width: 100%;
+			@include flex (1 1 2.4rem);
 			position: relative;
 			.content {
-				height: 7.475em;
+				height: 1.2rem;
 				overflow: hidden;
-				padding: 0.95em;
-				box-shadow: inset 0 0 0.1em $dark4;
+				padding: 0.15rem;
+				box-shadow: $shadow3;
 				.title {
-					height: 1.6em;
+					height: 0.25rem;
 					overflow: hidden;
-					margin: 0 0 0.4em;
-					font-size: 1.125em;
+					margin: 0 0 0.06rem;
+					font-size: 0.18rem;
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					a { font-weight: bold;}
 				}
 				.post_body {
-					margin: 0 0 0.5em;
-					font-size: 0.875em;}
+					margin: 0 0 0.08rem;
+					font-size: 0.14rem;}
 				.info {
-					font-size: 0.75em;
+					font-size: 0.12rem;
 					.date .icon-icon_clock { display: none;}
 					.visitors, .tags { display: none;}
 				}
@@ -947,7 +1028,7 @@ input, textarea, button {
 			.content {
 				.title a { @include aColor ($dark1);}
 				.post_body {
-					height: 4.3em;
+					height: 0.64rem;
 					overflow: hidden;
 					p {
 						line-height: 1.5;
@@ -962,14 +1043,14 @@ input, textarea, button {
 			background-size: cover;
 			.content {
 				.title {
-					@include transform (translate(0, 3.8em));
+					@include transform (translate(0, 0.72rem));
 					color: $light1;
 					a { @include aColor ($light1);}
 				}
 				.post_body { display: none;}
 				.info {
 					color: $light1;
-					@include transform (translate(0, 5.2em));}
+					@include transform (translate(0, 0.72rem));}
 			}
 		}
 		.img:nth-child(3n+1) .content { background: rgba(mix($primary1,#000,0.7),0.85);}
@@ -980,50 +1061,50 @@ input, textarea, button {
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
 	.list {
-		padding: 1.875em 0;
+		padding: 0.3rem 0;
 		.post {
-			margin: 0 0 1.875em;
+			margin: 0 0 0.3rem;
 			background: $bg1;
-			border-radius: 0.2em;
-			box-shadow: 0 0.1em 0.35em $dark3;
-			.content { padding: 2.5em;}
+			border-radius: 0.03rem;
+			box-shadow: $shadow1;
+			.content { padding: 0.4rem;}
 			.title {
-				margin: 0 0 1em;
-				font-size: 1.875em;}
+				margin: 0 0 0.15rem;
+				font-size: 0.3rem;}
 			.post_body {
-				img { max-width: 20em;}
+				img { max-width: 3.2rem;}
 			}
 			.info {
-				font-size: 0.75em;
+				font-size: 0.12rem;
 				color: $dark2;
 				.date {
 					float: left;
-					margin: 0 1.5em 0 0;
+					margin: 0 0.2rem 0 0;
 					.icon-icon_clock {
 						float: left;
 						display: inline;
-						margin: 0 0.15em 0 0;
-						font-size: 2.4em;}
+						margin: 0 0.05rem 0 0;
+						font-size: 0.28rem;}
 					time {
 						float: left;
-						line-height: 2.4em;}
+						line-height: 0.28rem;}
 				}
 				.visitors {
 					float: left;
-					margin: 0 1.5em 0 0;
+					margin: 0 0.18rem 0 0;
 					.icon-icon_book {
 						float: left;
 						display: inline;
-						line-height: 1.05;
-						margin: 0 0.15em 0 0;
-						font-size: 2.4em;}
+						line-height: 1.08;
+						margin: 0 0.05rem 0 0;
+						font-size: 0.28rem;}
 					span {
 						float: left;
-						line-height: 2.4em;}
+						line-height: 0.28rem;}
 				}
 				.tags {
-					line-height: 2.4em;
-					a { margin: 0 0.5em 0 0;}
+					line-height: 0.28rem;
+					a { margin: 0 0.06rem 0 0;}
 				}
 			}
 		}
@@ -1031,7 +1112,7 @@ input, textarea, button {
 }
 // pad
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
-	.list { margin: 0 1.875em;}
+	.list { margin: 0 0.3rem;}
 }
 
 
@@ -1040,24 +1121,28 @@ input, textarea, button {
 // phone
 @media only screen and (max-width: $phone_landscape-max){
 	.detail {
-		border-top: 9.375em solid $bg4;
+		border-top: 1.5rem solid $bg4;
 		.title {
 			width: 90%;
-			line-height: 1.3em;
-			font-size: 1.5em;
+			line-height: 1.2;
+			font-size: 0.24rem;
 			text-align: center;
 			color: $light1;
 			position: absolute;
 			left: 5%;
-			top: 3.2em;}
+			top: 0.8rem;}
 		.post_body {
-			padding: 0 0 1em;
+			padding: 0 0 0.15rem;
 			p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote {
-				margin-left: 15px;
-				margin-right: 15px;}
+				margin-left: 0.2rem;
+				margin-right: 0.2rem;}
+			li > p {
+				margin-left: 0;
+				margin-right: 0;
+			}
 			.xiami-player { //虾米音乐播放组件
-				margin-left: 15px;
-				margin-right: 15px;}
+				margin-left: 0.2rem;
+				margin-right: 0.2rem;}
 			img { width: 100%;}
 			.xiami-player img { width: auto;} //虾米音乐播放组件
 		}
@@ -1065,78 +1150,84 @@ input, textarea, button {
 			.date {
 				width: 100%;
 				text-align: center;
-				font-size: 1em;
+				font-size: 0.16rem;
 				color: $light1;
 				position: absolute;
 				left: 0;
-				top: 9em;
+				top: 1.44rem;
 				.icon-icon_clock { display: none;}
 			}
 			.visitors, .tags { display: none;}
 		}
 	}
 	.doc_comments, .ds-thread { //评论组件
-		padding: 1em 15px 0;
+		padding: 0.15rem 0.15rem 0;
 	}
 }
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
 	.detail {
 		background: $bg1;
-		border-radius: 0.2em;
-		box-shadow: 0 0.1em 0.35em $dark3;
-		.content { padding: 2.5em;}
+		border-radius: 0.03rem;
+		box-shadow: $shadow1;
+		.content { padding: 0.4rem;}
 		.title {
-			margin: 0 0 1em;
-			padding: 0 0 1em;
+			margin: 0 0 0.15rem;
+			padding: 0 0 0.15rem;
 			border-bottom: 1px solid $dark4;
-			font-size: 1.875em;}
+			font-size: 0.3rem;}
+		.post_body {
+			blockquote p {
+				margin-left: 0.2rem;
+				margin-right: 0.2rem;
+			}
+		}
 		.info {
-			font-size: 0.75em;
+			font-size: 0.12rem;
 			color: $dark2;
 			.date {
 				float: left;
-				margin: 0 1.5em 0 0;
+				margin: 0 0.18rem 0 0;
 				.icon-icon_clock {
 					float: left;
 					display: inline;
-					margin: 0 0.15em 0 0;
-					font-size: 2.4em;}
+					margin: 0 0.18rem 0 0;
+					font-size: 0.28rem;}
 				time {
 					float: left;
-					line-height: 2.4em;}
+					line-height: 0.28rem;}
 			}
 			.visitors {
 				float: left;
-				margin: 0 1.5em 0 0;
+				margin: 0 0.18rem 0 0;
 				.icon-icon_book {
 					float: left;
 					display: inline;
-					margin: 0 0.15em 0 0;
-					font-size: 2.4em;}
+					margin: 0 0.18rem 0 0;
+					font-size: 0.28rem;}
 				span {
 					float: left;
-					line-height: 2.4em;}
+					line-height: 0.28rem;}
 			}
 			.tags {
-				line-height: 2.4em;
-				a { margin: 0 0.5em 0 0;}
+				line-height: 0.28rem;
+				a { margin: 0 0.06rem 0 0;}
 			}
 		}
 	}
 }
 // pad
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
-	.detail { margin: 1.875em;}
+	.detail { margin: 0.3rem;}
 	.doc_comments, .ds-thread { //评论组件
-		margin: 3em 1.875em;
+		margin: 0.5rem 0.3rem;
 	}
 }
 // pc
 @media only screen and (min-width: $pc-min){
-	.detail { margin: 1.875em auto;}
+	.detail { margin: 0.3rem auto;}
 	.doc_comments, .ds-thread { //评论组件
-		margin: 3em auto;
+		margin: 0.5rem auto;
 	}
 }
 
@@ -1145,23 +1236,23 @@ input, textarea, button {
 
 .list .archive {
 	h1 {
-		padding: 0 0 0.5em;
+		padding: 0 0 0.08rem;
 		text-align: center;
-		font-size: 2em;
+		font-size: 0.32rem;
 	}
 	ul li {
-		font-size: 1.2em;
 		time {
 			float: left;
 			display: block;
-			width: 3em;
-			line-height: 2.1;
-			font-size: 0.8em;
+			width: 0.5rem;
+			line-height: 0.28rem;
+			font-size: 0.14rem;
 			color: $dark2;
 		}
 		a {
 			display: block;
-			margin: 0 0 0 3.5em;
+			margin: 0 0 0 0.56rem;
+			font-size: 0.18rem;
 		}
 	}
 }
@@ -1169,14 +1260,13 @@ input, textarea, button {
 @media only screen and (max-width: $phone_landscape-max){
 	.list {
 		.archive {
-			@include flex (1 17.75em);
 			width: 100%;
 			position: relative;
 			.content {
-				padding: 0.95em;
-				box-shadow: inset 0 0 0.1em $dark4;
+				padding: 0.15rem;
+				box-shadow: $shadow3;
 				ul li {
-					margin: 0 0 0.5em;
+					margin: 0 0 0.08rem;
 				}
 			}
 		}
@@ -1185,16 +1275,16 @@ input, textarea, button {
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
 	.list {
-		padding: 1.875em 0;
+		padding: 0.3rem 0;
 		.archive {
-			margin: 0 0 1.875em;
+			margin: 0 0 0.3rem;
 			background: $bg1;
-			border-radius: 0.2em;
-			box-shadow: 0 0.1em 0.35em $dark3;
+			border-radius: 0.03rem;
+			box-shadow: $shadow1;
 			.content {
-				padding: 2.5em;
+				padding: 0.4rem;
 				ul li {
-					padding: 0.8em 0;
+					padding: 0.12rem 0;
 					border-bottom: 1px solid $dark4;
 					&:last-of-type {
 						border: none;
@@ -1220,7 +1310,7 @@ input, textarea, button {
 	@include display-flex ();
 	@include flex-flow (row wrap);
 	li {
-		@include flex (1 20em);
+		@include flex (1 1 3.2rem);
 		.pic {
 			display: block;
 			span {
@@ -1245,23 +1335,23 @@ input, textarea, button {
 // phone
 @media only screen and (max-width: $phone_landscape-max){
 	#categories .cat_list {
-		padding: 0 0 3em;
+		padding: 0 0 0.5rem;
 		li {
-			padding: 3em 0 0;
+			padding: 0.5rem 0 0;
 			text-align: center;
 			.pic {
 				display: inline-block;
-				width: 11.25em;
-				height: 11.25em;
+				width: 1.8rem;
+				height: 1.8rem;
 				overflow: hidden;
 				border-radius: 50%;}
 			h2 {
-				margin: 0.8em 0;
-				a { font-size: 1.2em;}
+				margin: 0.12rem 0;
+				a { font-size: 0.18rem;}
 			}
 			p {
-				padding: 0 3em;
-				font-size: 0.85em;}
+				padding: 0 0.4rem;
+				font-size: 0.14rem;}
 		}
 	}
 }
@@ -1270,22 +1360,22 @@ input, textarea, button {
 	#categories
 	{
 		.cat_list {
-			padding: 0 3em 3.75em;
+			padding: 0 0.5rem 0.6rem;
 			li {
-				padding: 3.75em 0 0;
+				padding: 0.6rem 0 0;
 				.pic {
 					display: block;
-					height: 10em;
-					margin: 0 1em;
-					span { border-radius: 0.2em;}
+					height: 1.6rem;
+					margin: 0 0.15rem;
+					span { border-radius: 0.03rem;}
 				}
 				h2 {
-					margin: 1em 1em 0.5em;
-					a { font-size: 1.2em;}
+					margin: 0.15rem 0.15rem 0.08rem;
+					a { font-size: 0.18rem;}
 				}
 				p {
-					margin: 0 1.1em;
-					font-size: 0.85em;}
+					margin: 0 0.15rem;
+					font-size: 0.14rem;}
 			}
 		}
 	}
@@ -1295,16 +1385,16 @@ input, textarea, button {
 	#categories
 	{
 		.cat_list {
-			padding: 0 0 2.8em;
+			padding: 0 0 0.45rem;
 			li {
-				padding: 2.8em 0 0;
+				padding: 0.45rem 0 0;
 				.pic {
 					display: block;
-					height: 10em;
+					height: 1.6rem;
 					overflow: hidden;
-					margin: 0 0.9em;
+					margin: 0 0.15rem;
 					span {
-						border-radius: 0.2em;
+						border-radius: 0.03rem;
 						opacity: 0;
 						@include transition-transform (1s, $easing1);
 						@include transform-origin (50% 50%);
@@ -1322,12 +1412,12 @@ input, textarea, button {
 				&:nth-child(8) .pic span { @include animation (fadein 1.2s $easing1 0.35s both);}
 				&:nth-child(9) .pic span { @include animation (fadein 1.2s $easing1 0.4s both);}
 				h2 {
-					margin: 1.5em 0.9em 0.5em;
-					a { font-size: 1.2em;}
+					margin: 0.25rem 0.15rem 0.08rem;
+					a { font-size: 0.18rem;}
 				}
 				p {
-					margin: 0 1.1em;
-					font-size: 0.85em;}
+					margin: 0 0.15rem;
+					font-size: 0.14rem;}
 			}
 		}
 	}
@@ -1340,14 +1430,14 @@ input, textarea, button {
 	h3 a img {
 		width: 94px;
 		height: 150px;
-		border-radius: 0.2em;
+		border-radius: 0.03rem;
 		opacity: 0;
 		@include animation (fadein 1.2s $easing1 both);}
 	.text {
 		a { line-height: 1.3;}
 		.content p {
 			line-height: 1.3;
-			margin: 0 0 0.6em;}
+			margin: 0 0 0.1rem;}
 	}
 }
 // phone and pad
@@ -1360,10 +1450,10 @@ input, textarea, button {
 					float: left;
 					position: relative;}
 				.text {
-					margin: 0 0 0 7em;
+					margin: 0 0 0 1.1rem;
 					a {
 						display: inline-block;
-						margin: 0 0 0.7em;}
+						margin: 0 0 0.12rem;}
 				}
 			}
 		}
@@ -1373,15 +1463,32 @@ input, textarea, button {
 @media only screen and (max-width: $phone_portrait-max){
 	#movie {
 		li {
-			padding: 2.4em 1em 0;
-			&:last-of-type { padding: 2.4em 1em; }
+			padding: 0.4rem 0.15rem 0;
+			&:last-of-type { padding: 0.4rem 0.15rem; }
 			.item {
 				h3 a img {
 					width: 62px;
 					height: 100px;}
 				.text {
-					margin: 0 0 0 4.8em;
-					font-size: 1em;}
+					margin: 0 0 0 0.8rem;
+					font-size: 0.15rem;}
+			}
+		}
+	}
+}
+// phone_landscape
+@media only screen and (min-width: $phone_landscape-min) and (max-width: $phone_landscape-max){
+	#movie {
+		li {
+			padding: 0.4rem 0.25rem 0;
+			&:last-of-type { padding: 0.4rem 0.25rem; }
+			.item {
+				h3 a img {
+					width: 94px;
+					height: 150px;}
+				.text {
+					margin: 0 0 0 1.1rem;
+					font-size: 0.15rem;}
 			}
 		}
 	}
@@ -1390,33 +1497,33 @@ input, textarea, button {
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
 	#movie {
 		li {
-			margin: 0 5em;
-			padding: 4em 0 0;
-			&:last-of-type { padding: 4em 0; }
-			.item .text { font-size: 1.2em;}
+			margin: 0 0.8rem;
+			padding: 0.64rem 0 0;
+			&:last-of-type { padding: 0.64rem 0; }
+			.item .text { font-size: 0.18rem;}
 		}
 	}
 }
 // pc
 @media only screen and (min-width: $pc-min){
 	#movie {
-		padding: 2.8em 0 0;
+		padding: 0.45rem 0 0;
 		li {
 			float: left;
 			display: block;
 			width: 100px;
-			height: 13em;
+			height: 2.1rem;
 			position: relative;
 			.item {
 				min-height: 190px;
-				border-radius: 0.2em;
+				border-radius: 0.03rem;
 				position: absolute;
 				top: 0;
 				@include transition (width 0.3s $easing1);
 				h3 {
 					width: 100px;
 					line-height: 1.2;
-					padding: 3px 0 0.8em;
+					padding: 3px 0 0.12rem;
 					@include transition (opacity 1s $easing1);
 					img { padding:3px;}
 				}
@@ -1425,7 +1532,7 @@ input, textarea, button {
 						display: block;
 						width: 94px;
 						color: $dark1;
-						font-size: 0.8em;
+						font-size: 0.12rem;
 						text-align: center;
 						position: absolute;
 						top: 160px;}
@@ -1434,7 +1541,7 @@ input, textarea, button {
 						width: 280px;
 						padding: 10px;
 						color: $dark1;
-						font-size: 0.8em;}
+						font-size: 0.12rem;}
 				}
 			}
 			.hover {
@@ -1499,17 +1606,17 @@ input, textarea, button {
 	#works {
 		.play { display: none;}
 		.pic {
-			padding: 0 0.6em 2em;
+			padding: 0 0.1rem 0.3rem;
 			text-align: center;
 			.title_content {
-				padding: 3em 0 1.5em;
-				margin: 0 0 1em;
+				padding: 0.5rem 0 0.25rem;
+				margin: 0 0 0.15rem;
 				color: $accent3;
-				h2 { font-size: 1.8em;}
+				h2 { font-size: 0.3rem;}
 			}
 			img {
 				display: block;
-				margin: 0 auto 1.5em;
+				margin: 0 auto 0.25rem;
 				max-width: 100%;
 				box-shadow: $shadow1;}
 		}
@@ -1519,16 +1626,16 @@ input, textarea, button {
 @media only screen and (min-width: $pad_portrait-min){
 	#works {
 		.play {
-			padding: 9em 0 8em;
+			padding: 1.5rem 0 1.2rem;
 			background: $bg2;
-			box-shadow:inset 0 0 9em $dark3;
+			box-shadow:inset 0 0 1.5rem $dark3;
 			text-align: center;
 			.start {
 				display: block;
-				width: 5.5em;
-				height: 5.5em;
+				width: 0.9rem;
+				height: 0.9rem;
 				margin: auto;
-				border: 0.5em solid $primary1;
+				border: 0.08rem solid $primary1;
 				border-radius: 50%;
 				position: relative;
 				&:after {
@@ -1537,20 +1644,18 @@ input, textarea, button {
 					width: 0;
 					height: 0;
 					overflow: hidden;
-					border-left: 1.3em solid $primary1;
-					border-top: 1em dashed transparent;
-					border-bottom: 1em dashed transparent;
+					border-left: 0.2rem solid $primary1;
+					border-top: 0.15rem dashed transparent;
+					border-bottom: 0.15rem dashed transparent;
 					position: absolute;
-					left: 2.3em;
-					top: 1.8em;}
+					left: 0.38rem;
+					top: 0.3rem;}
 			}
 			.slogen {
-				margin: 3.5em 0 0;
-				font-size: 1.8em;}
+				margin: 0.3rem 0 0;
+				font-size: 0.28rem;}
 			.area {
-				padding: 0.5em 0;
-				margin: 0 0.8em;
-				font-size: 0.9em;
+				font-size: 0.14rem;
 				color: $dark2;}
 		}
 		.pic {
@@ -1574,10 +1679,10 @@ input, textarea, button {
 // pc
 @media only screen and (min-width: $pc-min){
 	#works {
-		padding: 2.8em 0 0;
+		padding: 0.45rem 0 0;
 		opacity: 0;
 		@include animation (fadein 1.2s $easing1 both);
-		.play { border-radius: 0.5em;}
+		.play { border-radius: 0.08rem;}
 	}
 }
 
@@ -1595,30 +1700,33 @@ input, textarea, button {
 			background-size: cover;
 			border-radius: 50%;}
 		p {
-			padding: 1.5em 0 0;
+			padding: 0.25rem 0 0;
 			text-align: center;
 			color: $light1;}
 	}
 	h2.title {
-		padding: 5em 0 2em;
+		padding: 1rem 0 0.4rem;
 		text-align: center;
-		font-size: 1.2em;
+		font-size: 0.18rem;
 		color: $accent3;
 		strong {
 			display: block;
 			line-height: 1;
-			font-size: 5em;}
+			font-size: 0.8rem;}
 	}
 	.skills {
-		li {
-			float: left;
-			.item {
-				margin: auto;
-				.text {
-					p {
-						text-align: center;
-						color: $primary1;}
-					span { display: none;}
+		ul {
+			@include display-flex ();
+			@include flex-flow (row wrap);
+			li {
+				.item {
+					margin: auto;
+					.text {
+						p {
+							text-align: center;
+							color: $primary1;}
+						span { display: none;}
+					}
 				}
 			}
 		}
@@ -1626,24 +1734,24 @@ input, textarea, button {
 	.remark {
 		.myself {
 			text-align: center;
-			p { padding: 1em 0;}
+			p { padding: 0.15rem 0;}
 		}
 		.friends {
-			padding: 2em 0 0;
+			padding: 0.3rem 0 0;
 			.column {
 				.item {
-					padding: 2em;
+					padding: 0.3rem;
 					background: $bg1;
 					h4 {
-						padding: 0 0 1em;
+						padding: 0 0 0.15rem;
 						span {
-							padding: 0 0.5em 0 0;
-							font-size: 1.5em;
+							padding: 0 0.12rem 0 0;
+							font-size: 0.25rem;
 							color: $accent1;}
 					}
 					.content {
 						p {
-							padding: 0.3em 0;
+							padding: 0.05rem 0;
 							text-indent: 2em;}
 					}
 				}
@@ -1655,15 +1763,15 @@ input, textarea, button {
 @media only screen and (max-width: $phone_landscape-max){
 	#about {
 		.intro {
-			padding: 3em 0;
+			padding: 0.5rem 0;
 			.avatar {
-				width: 6em;
-				height: 6em;}
+				width: 1rem;
+				height: 1rem;}
 		}
-		h2.title { padding: 3em 0 1em;}
+		h2.title { padding: 0.5rem 0 0.15rem;}
 		.skills {
 			li {
-				margin: 0 0 1em;
+				margin: 0 0 0.15rem;
 				.item {
 					width: 80px;
 					height: 80px;
@@ -1678,13 +1786,13 @@ input, textarea, button {
 						top: 2px;
 						p {
 							line-height: 76px;
-							font-size: 0.9em;}
+							font-size: 0.14rem;}
 					}
 				}
 			}
 		}
 		.remark .friends .item {
-			margin: 0 0 2em;
+			margin: 0 0 0.3rem;
 			border-top: 1px solid $dark4;
 			border-bottom: 1px solid $dark4;}
 	}
@@ -1693,8 +1801,10 @@ input, textarea, button {
 @media only screen and (max-width: $phone_portrait-max){
 	#about {
 		.skills {
-			padding: 0 1em;
-			li { width: 33.3%;}
+			padding: 0 0.15rem;
+			li {
+				@include flex (0 1 33.3%);
+			}
 		}
 	}
 }
@@ -1702,8 +1812,10 @@ input, textarea, button {
 @media only screen and (min-width: $phone_landscape-min) and (max-width: $phone_landscape-max){
 	#about {
 		.skills {
-			padding: 0 2em;
-			li { width: 20%;}
+			padding: 0 0.3rem;
+			li {
+				@include flex (0 1 20%);
+			}
 		}
 	}
 }
@@ -1711,19 +1823,19 @@ input, textarea, button {
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
 	#about {
 		.intro {
-			padding: 8em 0 5em;
+			padding: 1.3rem 0 0.8rem;
 			background: none;
 			.avatar {
-				width: 10em;
-				height: 10em;
+				width: 1.6rem;
+				height: 1.6rem;
 				border: 1px solid $dark4;}
 			p {
 				color: $dark1;
-				font-size: 1.2em;}
+				font-size: 0.18rem;}
 		}
 		.skills {
 			li {
-				width: 20%;
+				@include flex (0 1 20%);
 				.item {
 					width: 116px;
 					height: 116px;
@@ -1738,16 +1850,16 @@ input, textarea, button {
 						top: 2px;
 						p {
 							line-height: 112px;
-							font-size: 1.1em;}
+							font-size: 0.18rem;}
 					}
 				}
 			}
 		}
 		.remark .friends {
-			padding: 2em 0;
+			padding: 0.3rem 0;
 			.item {
 				width: 70%;
-				margin: 0 auto 2em;
+				margin: 0 auto 0.3rem;
 				box-shadow: $shadow1;}
 		}
 	}
@@ -1756,10 +1868,10 @@ input, textarea, button {
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_portrait-max){
 	#about {
 		.skills {
-			padding: 0 2em;
+			padding: 0 0.3rem;
 			ul {
-				padding: 1em 0 0;
-				li { margin: 0 0 1.5em;}
+				padding: 0.15rem 0 0;
+				li { margin: 0 0 0.25rem;}
 			}
 		}
 	}
@@ -1768,10 +1880,10 @@ input, textarea, button {
 @media only screen and (min-width: $pad_landscape-min) and (max-width: $pad_landscape-max){
 	#about {
 		.skills {
-			padding: 0 5em;
+			padding: 0 0.8rem;
 			ul {
-				padding: 2em 0 0;
-				li { margin: 0 0 3em;}
+				padding: 0.3rem 0 0;
+				li { margin: 0 0 0.5rem;}
 			}
 		}
 	}
@@ -1780,21 +1892,21 @@ input, textarea, button {
 @media only screen and (min-width: $pc-min){
 	#about {
 		.intro {
-			padding: 12em 0;
+			padding: 1.9rem 0;
 			opacity: 0;
 			.avatar {
-				width: 10em;
-				height: 10em;}
-			p { font-size: 1.2em;}
+				width: 1.6rem;
+				height: 1.6rem;}
+			p { font-size: 0.18rem;}
 		}
 		.skills {
-			max-width: 60em;
+			max-width: 9.6rem;
 			margin: auto;
 			ul {
-				padding: 2em 0 0;
+				padding: 0.3rem 0 0;
 				li {
-					width: 20%;
-					margin: 0 0 3em;
+					@include flex (0 1 20%);
+					margin: 0 0 0.5rem;
 					.item {
 						width: 130px;
 						height: 130px;
@@ -1809,7 +1921,7 @@ input, textarea, button {
 							top: 2px;
 							p {
 								line-height: 126px;
-								font-size: 1.3em;}
+								font-size: 0.2rem;}
 						}
 					}
 				}
@@ -1821,9 +1933,9 @@ input, textarea, button {
 				width: 48.5%;
 				&:first-of-type { margin: 0 3% 0 0;}
 				.item {
-					margin: 0 0 2em;
+					margin: 0 0 0.3rem;
 					box-shadow: $shadow1;
-					.content p { font-size: 0.9em;}
+					.content p { font-size: 0.14rem;}
 				}
 			}
 		}
@@ -1836,7 +1948,7 @@ input, textarea, button {
 #tools {
 	text-align: center;
 	p.intro {
-		max-width: 30em;
+		max-width: 4.8rem;
 		margin: auto;}
 	ul {
 		@include display-flex ();
@@ -1847,13 +1959,13 @@ input, textarea, button {
 				line-height: 0;
 				img {
 					width: 100%;
-					border-radius: 0.2em;}
+					border-radius: 0.03rem;}
 			}
 			h2 {
-				padding: 1em 0 0.5em;
-				font-size: 1em;}
+				padding: 0.15rem 0 0.08rem;
+				font-size: 0.16rem;}
 			p {
-				font-size: 0.9em;
+				font-size: 0.14rem;
 				color: $dark2;}
 		}
 	}
@@ -1862,38 +1974,38 @@ input, textarea, button {
 @media only screen and (max-width: $phone_landscape-max){
 	#tools {
 		h1.title {
-			padding: 1.5em 1em 0;
-			font-size: 2em;}
+			padding: 0.2rem 0.08rem 0;
+			font-size: 0.32rem;}
 		p.intro {
-			padding: 0 1em 3em;
-			font-size: 1em;}
+			padding: 0 0.15rem 0.3rem;
+			font-size: 0.15rem;}
 		ul {
-			padding: 0 1em;
+			padding: 0 0.15rem;
 			li {
-				@include flex (1 12em);
-				padding: 0 3% 1em;}
+				@include flex (1 1 2.1rem);
+				padding: 0 3% 0.3rem;}
 		}
 	}
 }
 // phone_landscape
 @media only screen and (min-width: $phone_landscape-min) and (max-width: $phone_landscape-max){
 	#tools {
-		ul i p { height: 9em;}
+		ul i p { height: 1.5rem;}
 	}
 }
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
 	#tools {
 		h1.title {
-			padding: 2em 0 0;
-			font-size: 2.5em;}
+			padding: 0.8rem 0 0;
+			font-size: 0.4rem;}
 		p.intro {
-			padding: 0 0 3em;
-			font-size: 1.2em;}
+			padding: 0 0 0.6rem;
+			font-size: 0.18rem;}
 		ul li {
-			@include flex (1 16em);
-			padding: 0 2% 2em;
-			p { height: 7em;}
+			@include flex (1 1 2.8rem);
+			padding: 0 2% 0.3rem;
+			p { height: 1.1rem;}
 		}
 	}
 }
@@ -1931,25 +2043,25 @@ a { @include transition (color 0.5s $easing1, background-color 0.5s $easing1);}
 	100% { transform: scale(1); }
 }
 @-webkit-keyframes fadein_up {
-	0% { opacity: 0; -webkit-transform: translate(0, 2em); }
+	0% { opacity: 0; -webkit-transform: translate(0, 0.3rem); }
 	100% { opacity: 1; -webkit-transform: translate(0, 0); }
 }
 @keyframes fadein_up {
-	0% { opacity: 0; transform: translate(0, 2em); }
+	0% { opacity: 0; transform: translate(0, 0.3rem); }
 	100% { opacity: 1; transform: translate(0, 0); }
 }
 @-webkit-keyframes jump {
 	0% { -webkit-transform: translate(0, 0) }
-	25% { -webkit-transform: translate(0, 0.1em) }
+	25% { -webkit-transform: translate(0, 0.02rem) }
 	50% { -webkit-transform: translate(0, 0) }
-	75% { -webkit-transform: translate(0, -0.1em) }
+	75% { -webkit-transform: translate(0, -0.02rem) }
 	100% { -webkit-transform: translate(0, 0); }
 }
 @keyframes jump {
 	0% { transform: translate(0, 0) }
-	25% { transform: translate(0, 0.1em) }
+	25% { transform: translate(0, 0.02rem) }
 	50% { transform: translate(0, 0) }
-	75% { transform: translate(0, -0.1em) }
+	75% { transform: translate(0, -0.02rem) }
 	100% { transform: translate(0, 0); }
 }
 
@@ -1964,41 +2076,39 @@ a { @include transition (color 0.5s $easing1, background-color 0.5s $easing1);}
 
 .not_found {
 	text-align: center;
-	h1 {
-		line-height: 1.2em;
-		font-size: 5em;}
+	h1 { line-height: 1.2; }
 	.img {
 		background: url(/template/images/not_found.png) no-repeat center center;
 		background-size: contain;}
 	a {
 		display: block;
-		width: 12.5em;
-		height: 3em;
-		line-height: 3em;
+		width: 2rem;
+		height: 0.5rem;
+		line-height: 0.5rem;
 		margin: 0 auto;
 		background: $primary1;
-		border-radius: 0.2em;
+		border-radius: 0.03rem;
 		color: $light1;}
 }
 // phone
 @media only screen and (max-width: $phone_landscape-max){
 	.not_found {
-		padding: 4em 0;
-		h1 { font-size: 3.5em;}
+		padding: 0.64rem 0;
+		h1 { font-size: 0.56rem;}
 		.img {
-			height: 8em;
-			margin: 3em auto;}
+			height: 1.3rem;
+			margin: 0.5rem auto;}
 	}
 }
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
 	.not_found {
-		padding: 6em 0;
-		h1 { font-size: 5em;}
-		p { font-size: 1.2em;}
+		padding: 1rem 0;
+		h1 { font-size: 0.8rem;}
+		p { font-size: 0.18rem;}
 		.img {
-			height: 9em;
-			margin: 4em auto;}
+			height: 1.5rem;
+			margin: 0.64rem auto;}
 	}
 }
 
@@ -2014,13 +2124,13 @@ a { @include transition (color 0.5s $easing1, background-color 0.5s $easing1);}
 .non_html5_bg {
 	background: $accent3;
 	.non_html5 {
-		padding: 15em 0 0;
+		padding: 2.4rem 0 0;
 		text-align: center;
 		h1 {
-			font-size: 2.4em;
+			font-size: 0.38rem;
 			color: #f5f5f5;}
 		p {
-			font-size: 1em;
+			font-size: 0.16em;
 			color: #f5f5f5;
 			a {
 				color: #f5f5f5;
@@ -2062,7 +2172,7 @@ a { @include transition (color 0.5s $easing1, background-color 0.5s $easing1);}
 //**************************  baidu share  ****************************//
 
 #baidu_share {
-	padding: 2em 0 0;
+	padding: 0.3rem 0 0;
 }
 body {
 	#baidu_share, .bdselect_share_content, .sr-bdimgshare {
@@ -2156,7 +2266,7 @@ body {
 // phone
 @media only screen and (max-width: $phone_landscape-max){
 	#baidu_share {
-		padding: 0 15px 2em;
+		padding: 0 0.15rem 0.3rem;
 	}
 }
 
@@ -2182,7 +2292,7 @@ body {
 		.ds-post-toolbar {
 			border-top: 1px solid lighten($dark4, 30%);
 			.ds-replybox {
-				padding: 0 0 0 5.4em;
+				padding: 0 0 0 0.86rem;
 			}
 		}
 		.ds-post-options {
@@ -2199,7 +2309,7 @@ body {
 			box-shadow: none;
 			color: $light1;
 			text-shadow: none;
-			font-size: 1.2em;
+			font-size: 0.18rem;
 		}
 		li.ds-tab a.ds-current {
 			border: none;
@@ -2210,7 +2320,7 @@ body {
 			li.ds-post {
 				border-top: 1px solid lighten($dark4, 30%);
 				.ds-post-self {
-					padding: 1.5em 0;
+					padding: 0.25rem 0;
 					border: none;
 					.ds-comment-body {
 						p {
@@ -2253,7 +2363,7 @@ body {
 	background-color: #3f3f3f;
 	padding: 10px;
 	border-radius: 3px;
-	font-size: 0.8em;
+	font-size: 0.12rem;
 }
 
 .codehilite .hll {

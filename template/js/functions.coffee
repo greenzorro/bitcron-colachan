@@ -180,7 +180,7 @@ plugin =
                 e.preventDefault()  #防止页面跳动
                 hash = this.hash.slice(1)
                 if hash.length
-                    $target = $("[name=#{hash}]")
+                    $target = if $("[name=#{hash}]").length then $("[name=#{hash}]") else $("[id=#{hash}]")
                     if $target.length
                         targetOffset = $target.offset().top
                         $("html,body").animate { scrollTop: targetOffset }, 800
