@@ -1339,6 +1339,7 @@ input, textarea, button {
 		li {
 			padding: 0.5rem 0 0;
 			text-align: center;
+			&:last-of-type { padding: 0; }
 			.pic {
 				display: inline-block;
 				width: 1.8rem;
@@ -1357,68 +1358,64 @@ input, textarea, button {
 }
 // pad
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
-	#categories
-	{
-		.cat_list {
-			padding: 0 0.5rem 0.6rem;
-			li {
-				padding: 0.6rem 0 0;
-				.pic {
-					display: block;
-					height: 1.6rem;
-					margin: 0 0.15rem;
-					span { border-radius: 0.03rem;}
-				}
-				h2 {
-					margin: 0.15rem 0.15rem 0.08rem;
-					a { font-size: 0.18rem;}
-				}
-				p {
-					margin: 0 0.15rem;
-					font-size: 0.14rem;}
+	#categories .cat_list {
+		padding: 0 0.5rem 0.6rem;
+		li {
+			padding: 0.6rem 0 0;
+			&:last-of-type { padding: 0; }
+			.pic {
+				display: block;
+				height: 1.6rem;
+				margin: 0 0.15rem;
+				span { border-radius: 0.03rem;}
 			}
+			h2 {
+				margin: 0.15rem 0.15rem 0.08rem;
+				a { font-size: 0.18rem;}
+			}
+			p {
+				margin: 0 0.15rem;
+				font-size: 0.14rem;}
 		}
 	}
 }
 // pc
 @media only screen and (min-width: $pc-min){
-	#categories
-	{
-		.cat_list {
-			padding: 0 0 0.45rem;
-			li {
-				padding: 0.45rem 0 0;
-				.pic {
-					display: block;
-					height: 1.6rem;
-					overflow: hidden;
-					margin: 0 0.15rem;
-					span {
-						border-radius: 0.03rem;
-						opacity: 0;
-						@include transition-transform (1s, $easing1);
-						@include transform-origin (50% 50%);
-						@include transform (scale(1));
-						&:hover { @include transform (scale(1.05));}
-					}
+	#categories .cat_list {
+		padding: 0 0 0.45rem;
+		li {
+			padding: 0.45rem 0 0;
+			&:last-of-type { padding: 0; }
+			.pic {
+				display: block;
+				height: 1.6rem;
+				overflow: hidden;
+				margin: 0 0.15rem;
+				span {
+					border-radius: 0.03rem;
+					opacity: 0;
+					@include transition-transform (1s, $easing1);
+					@include transform-origin (50% 50%);
+					@include transform (scale(1));
+					&:hover { @include transform (scale(1.05));}
 				}
-				&:nth-child(1) .pic span { @include animation (fadein 1.2s $easing1 0s both);}
-				&:nth-child(2) .pic span { @include animation (fadein 1.2s $easing1 0.05s both);}
-				&:nth-child(3) .pic span { @include animation (fadein 1.2s $easing1 0.1s both);}
-				&:nth-child(4) .pic span { @include animation (fadein 1.2s $easing1 0.15s both);}
-				&:nth-child(5) .pic span { @include animation (fadein 1.2s $easing1 0.2s both);}
-				&:nth-child(6) .pic span { @include animation (fadein 1.2s $easing1 0.25s both);}
-				&:nth-child(7) .pic span { @include animation (fadein 1.2s $easing1 0.3s both);}
-				&:nth-child(8) .pic span { @include animation (fadein 1.2s $easing1 0.35s both);}
-				&:nth-child(9) .pic span { @include animation (fadein 1.2s $easing1 0.4s both);}
-				h2 {
-					margin: 0.25rem 0.15rem 0.08rem;
-					a { font-size: 0.18rem;}
-				}
-				p {
-					margin: 0 0.15rem;
-					font-size: 0.14rem;}
 			}
+			&:nth-child(1) .pic span { @include animation (fadein 1.2s $easing1 0s both);}
+			&:nth-child(2) .pic span { @include animation (fadein 1.2s $easing1 0.05s both);}
+			&:nth-child(3) .pic span { @include animation (fadein 1.2s $easing1 0.1s both);}
+			&:nth-child(4) .pic span { @include animation (fadein 1.2s $easing1 0.15s both);}
+			&:nth-child(5) .pic span { @include animation (fadein 1.2s $easing1 0.2s both);}
+			&:nth-child(6) .pic span { @include animation (fadein 1.2s $easing1 0.25s both);}
+			&:nth-child(7) .pic span { @include animation (fadein 1.2s $easing1 0.3s both);}
+			&:nth-child(8) .pic span { @include animation (fadein 1.2s $easing1 0.35s both);}
+			&:nth-child(9) .pic span { @include animation (fadein 1.2s $easing1 0.4s both);}
+			h2 {
+				margin: 0.25rem 0.15rem 0.08rem;
+				a { font-size: 0.18rem;}
+			}
+			p {
+				margin: 0 0.15rem;
+				font-size: 0.14rem;}
 		}
 	}
 }
@@ -1772,6 +1769,7 @@ input, textarea, button {
 		.skills {
 			li {
 				margin: 0 0 0.15rem;
+				&:last-of-type { margin: 0; }
 				.item {
 					width: 80px;
 					height: 80px;
@@ -1871,7 +1869,10 @@ input, textarea, button {
 			padding: 0 0.3rem;
 			ul {
 				padding: 0.15rem 0 0;
-				li { margin: 0 0 0.25rem;}
+				li {
+					margin: 0 0 0.25rem;
+					&:last-of-type { margin: 0; }
+				}
 			}
 		}
 	}
@@ -1883,7 +1884,10 @@ input, textarea, button {
 			padding: 0 0.8rem;
 			ul {
 				padding: 0.3rem 0 0;
-				li { margin: 0 0 0.5rem;}
+				li {
+					margin: 0 0 0.5rem;
+					&:last-of-type { margin: 0; }
+				}
 			}
 		}
 	}
@@ -1907,6 +1911,7 @@ input, textarea, button {
 				li {
 					@include flex (0 1 20%);
 					margin: 0 0 0.5rem;
+					&:last-of-type { margin: 0; }
 					.item {
 						width: 130px;
 						height: 130px;
@@ -1983,7 +1988,9 @@ input, textarea, button {
 			padding: 0 0.15rem;
 			li {
 				@include flex (1 1 2.1rem);
-				padding: 0 3% 0.3rem;}
+				padding: 0 3% 0.3rem;
+				&:last-of-type { padding-bottom: 0; }
+			}
 		}
 	}
 }
@@ -2003,8 +2010,9 @@ input, textarea, button {
 			padding: 0 0 0.6rem;
 			font-size: 0.18rem;}
 		ul li {
-			@include flex (1 1 2.8rem);
+			@include flex (1 1 2.6rem);
 			padding: 0 2% 0.3rem;
+			&:last-of-type { padding-bottom: 0; }
 			p { height: 1.1rem;}
 		}
 	}

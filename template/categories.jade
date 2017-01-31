@@ -9,7 +9,7 @@ block content
 	.special
 		#categories
 			.page_wrap
-				ul.cat_list.clearfix
+				ul.cat_list
 					li.life
 						a.pic(href="/category/生活")
 							span
@@ -143,7 +143,7 @@ block content
 							|这些梦境似乎并不来源于生活
 							br
 							|就这么突然冒出来的
-					li //-防止最后一项在PC上显示过大
+					li //-防止最后一项独占一行，太宽影响显示效果
 
 				include include/paginator.jade
 
