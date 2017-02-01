@@ -818,10 +818,15 @@ input, textarea, button {
 
 //******************************  toc  ********************************//
 
-/*body .post_body .toc {
-	display: none;
+.detail .post_body .toc {
+	width: 0;
+	overflow: hidden;
 	background: $bg1;
 	box-shadow: $shadow1;
+	position: fixed;
+	right: 0;
+	z-index: 19;
+	@include transition (width 0.3s $easing1);
 	ul {
 		margin: 0;
 		padding: 0;
@@ -830,19 +835,20 @@ input, textarea, button {
 	a {
 		display: block;
 		height: 0.4rem;
-		line-height: 2.5;
+		line-height: 0.4rem;
 		padding: 0 0 0 0.2rem;
 		font-size: 0.14rem;
 		color: $dark2;
-		&:hover {
-			background-color: $bg2;
-		}
 	}
 	& > ul {
 		width: 100%;
 		height: 100%;
 		overflow-y: auto;
+		@include transition-transform (0.3s, $easing1);
+		@include transform-origin (0% 0%);
+		@include transform (translate(100%, 0));
 		& > li {
+			padding: 0.1rem 0;
 			border-bottom: 1px solid $dark4;
 			& > a {
 				font-size: 0.16rem;
@@ -850,23 +856,89 @@ input, textarea, button {
 			}
 		}
 	}
+	li li {
+		padding-left: 0.15rem;
+	}
+}
+.detail .post_body .toc_active {
+	width: 2rem;
+	& > ul {
+		@include transform (translate(0, 0));
+	}
+}
+.post a.directory {
+	display: none;
+	background: $primary2;
+	border-radius: 0.5rem 0 0 0.5rem;
+	color: $bg1;
+	opacity: 0.95;
+	position: fixed;
+	right: 0;
+	z-index: 19;
+	@include transition (right 0.3s $easing1, background 0.3s $easing1);
+}
+.post a.directory_active {
+	background: $primary1;
+	right: 2rem;
 }
 // phone
 @media only screen and (max-width: $phone_landscape-max){
-	.post_body .toc {
-		position: fixed;
-		left: 30%;
-		right: 0;
+	.detail .post_body .toc {
 		top: 0;
 		bottom: 0;
-		z-index: 19;
+		a:active {
+			background-color: $bg2;
+		}
+	}
+	.post a.directory {
+		width: 0.4rem;
+		height: 0.24rem;
+		line-height: 0.24rem;
+		font-size: 0.12rem;
+		text-indent: 0.1rem;
+		top: 1.94rem;
 	}
 }
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
-	.post_body .toc {
+	.detail .post_body .toc {
+		top: 8vh;
+		& > ul {
+			min-height: 2rem;
+			max-height: 84vh;
+		}
 	}
-}*/
+	.post a.directory {
+		height: 0.32rem;
+		line-height: 0.32rem;
+		font-size: 0.14rem;
+		text-indent: 0.12rem;
+	}
+}
+// pad
+@media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
+	.detail .post_body .toc {
+		a:active {
+			background-color: $bg2;
+		}
+	}
+	.post a.directory {
+		width: 0.7rem;
+		top: 3.4rem;
+	}
+}
+// pc
+@media only screen and (min-width: $pc-min){
+	.detail .post_body .toc {
+		a:hover {
+			background-color: $bg2;
+		}
+	}
+	.post a.directory {
+		width: 0.5rem;
+		top: 1.8rem;
+	}
+}
 
 
 //***************************  pagination  ****************************//
@@ -1091,7 +1163,7 @@ input, textarea, button {
 				}
 				.visitors {
 					float: left;
-					margin: 0 0.18rem 0 0;
+					margin: 0 0.2rem 0 0;
 					.icon-icon_book {
 						float: left;
 						display: inline;
@@ -1187,11 +1259,11 @@ input, textarea, button {
 			color: $dark2;
 			.date {
 				float: left;
-				margin: 0 0.18rem 0 0;
+				margin: 0 0.2rem 0 0;
 				.icon-icon_clock {
 					float: left;
 					display: inline;
-					margin: 0 0.18rem 0 0;
+					margin: 0 0.05rem 0 0;
 					font-size: 0.28rem;}
 				time {
 					float: left;
@@ -1199,11 +1271,12 @@ input, textarea, button {
 			}
 			.visitors {
 				float: left;
-				margin: 0 0.18rem 0 0;
+				margin: 0 0.2rem 0 0;
 				.icon-icon_book {
 					float: left;
 					display: inline;
-					margin: 0 0.18rem 0 0;
+					line-height: 1.08;
+					margin: 0 0.05rem 0 0;
 					font-size: 0.28rem;}
 				span {
 					float: left;
@@ -1468,7 +1541,7 @@ input, textarea, button {
 					height: 100px;}
 				.text {
 					margin: 0 0 0 0.8rem;
-					font-size: 0.15rem;}
+				}
 			}
 		}
 	}
@@ -1485,7 +1558,7 @@ input, textarea, button {
 					height: 150px;}
 				.text {
 					margin: 0 0 0 1.1rem;
-					font-size: 0.15rem;}
+				}
 			}
 		}
 	}

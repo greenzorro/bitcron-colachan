@@ -5,6 +5,7 @@ window.onload = ->
     pageFunc.searchForm()  #搜索框
     pageFunc.qrCode()  #二维码
     pageFunc.listType()  #列表页文章增加背景图
+    pageFunc.postDirectory()  #文章内容目录的开关
     pageFunc.movies()  #电影收藏
     pageFunc.works()  #设计作品
     pageFunc.aboutProgress()  #关于页面的环形进度条
@@ -69,6 +70,14 @@ pageFunc =
                     $(item).removeAttr "style" for item in imgs
             setBg()
             window.onresize = -> setBg()  #改变窗口大小
+
+    # 文章内容目录的开关
+    postDirectory: ->
+        if document.getElementsByClassName("toc")[0]?  #页面中包含内容目录模块
+            $(".post a.directory").show();  #显示目录开关
+            $(".post a.directory").click ->  #点击目录开关，改变目录与开关本身的状态（实际效果为展开目录）
+                $(this).toggleClass("directory_active");
+                $(".toc").toggleClass("toc_active");
 
     # 电影收藏
     movies: ->
@@ -183,7 +192,7 @@ plugin =
                     $target = if $("[name=#{hash}]").length then $("[name=#{hash}]") else $("[id=#{hash}]")
                     if $target.length
                         targetOffset = $target.offset().top
-                        $("html,body").animate { scrollTop: targetOffset }, 800
+                        $("html,body").animate { scrollTop: targetOffset - 20 }, 800
                 else
                     $("html,body").animate { scrollTop: 0 }, 800
 
