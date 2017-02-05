@@ -1579,7 +1579,6 @@ input, textarea, button {
 				border-radius: 0.03rem;
 				position: absolute;
 				top: 0;
-				@include transition (width 0.3s $easing1);
 				h3 {
 					width: 100px;
 					line-height: 1.2;
