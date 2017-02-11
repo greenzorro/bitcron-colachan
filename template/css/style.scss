@@ -840,7 +840,7 @@ input, textarea, button {
 		color: $dark2;
 	}
 	& > ul {
-		width: 100%;
+		width: 2rem;
 		height: 100%;
 		overflow-y: auto;
 		@include transition-transform (0.3s, $easing1);
@@ -903,7 +903,7 @@ input, textarea, button {
 	.detail .post_body .toc {
 		top: 8vh;
 		& > ul {
-			min-height: 2rem;
+			min-height: 3.5rem;
 			max-height: 84vh;
 		}
 	}
@@ -936,6 +936,9 @@ input, textarea, button {
 	.post a.directory {
 		width: 0.5rem;
 		top: 1.8rem;
+		&:hover {
+			background: $primary1;
+		}
 	}
 }
 
