@@ -11,7 +11,6 @@ window.onload = ->
     pageFunc.aboutProgress()  #关于页面的环形进度条
 
     #插件效果
-    plugin.fancybox()  #fancybox弹窗相册
     plugin.smoothScroll()  #锚链接平滑滚动
 
 
@@ -169,17 +168,6 @@ plugin =
             obj.find(".pie_left").css {  #将左半环转到相应位置
                 "-webkit-transform": "rotate(#{(n-0.5)*360}deg)",
                 "transform": "rotate(#{(n-0.5)*360}deg)"
-            }
-
-    # fancybox弹窗相册
-    fancybox: ->
-        if document.getElementsByClassName("fancybox")[0]?
-            $('.fancybox').fancybox {
-                prevEffect : 'none',
-                nextEffect : 'none',
-                closeBtn  : false,
-                arrows    : true,
-                nextClick : true
             }
 
     # 锚链接平滑滚动
