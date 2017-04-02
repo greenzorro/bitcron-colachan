@@ -1234,9 +1234,6 @@ input, textarea, button {
 			.visitors, .tags { display: none;}
 		}
 	}
-	.doc_comments, .ds-thread { //评论组件
-		padding: 0.15rem 0.15rem 0;
-	}
 }
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
@@ -1294,14 +1291,30 @@ input, textarea, button {
 // pad
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
 	.detail { margin: 0.3rem;}
-	.doc_comments, .ds-thread { //评论组件
+}
+// pc
+@media only screen and (min-width: $pc-min){
+	.detail { margin: 0.3rem auto;}
+}
+
+
+//****************************  comments  *****************************//
+
+// phone
+@media only screen and (max-width: $phone_landscape-max){
+	.doc_comments, #lv-container {
+		padding: 0.15rem 0.15rem 0;
+	}
+}
+// pad
+@media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
+	.doc_comments, #lv-container {
 		margin: 0.5rem 0.3rem;
 	}
 }
 // pc
 @media only screen and (min-width: $pc-min){
-	.detail { margin: 0.3rem auto;}
-	.doc_comments, .ds-thread { //评论组件
+	.doc_comments, #lv-container {
 		margin: 0.5rem auto;
 	}
 }
@@ -1741,7 +1754,7 @@ input, textarea, button {
 // pc
 @media only screen and (min-width: $pc-min){
 	#works {
-		padding: 0.45rem 0 0;
+		padding: 0.45rem 0;
 		opacity: 0;
 		@include animation (fadein 1.2s $easing1 both);
 		.play { border-radius: 0.08rem;}
@@ -2344,70 +2357,6 @@ body {
 }
 
 
-//****************************  duoshuo  ******************************//
-
-#fb_comments_container {
-	max-width: 100%;
-	overflow-x: hidden;
-	#ds-thread #ds-reset {
-		.ds-sync label {
-			display: none;
-		}
-		.ds-textarea-wrapper {
-			background: $bg1;
-			border: 1px solid $dark4;
-			border-bottom: none;
-			border-radius: 0;
-		}
-		.ds-gradient-bg {
-			background: $bg1;
-		}
-		.ds-post-toolbar {
-			border-top: 1px solid lighten($dark4, 30%);
-			.ds-replybox {
-				padding: 0 0 0 0.86rem;
-			}
-		}
-		.ds-post-options {
-			border: 1px solid $dark4;
-			border-top: 1px solid transparent;
-			border-radius: 0;
-		}
-		.ds-post-button {
-			background: $primary1;
-			border: 1px solid $dark4;
-			border-top: none;
-			border-left: none;
-			border-radius: 0;
-			box-shadow: none;
-			color: $light1;
-			text-shadow: none;
-			font-size: 0.18rem;
-		}
-		li.ds-tab a.ds-current {
-			border: none;
-			background: none;
-		}
-		.ds-comments {
-			border-bottom: 1px solid lighten($dark4, 30%);
-			li.ds-post {
-				border-top: 1px solid lighten($dark4, 30%);
-				.ds-post-self {
-					padding: 0.25rem 0;
-					border: none;
-					.ds-comment-body {
-						p {
-							line-height: 1.8;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-
-
 //***************************  code highlight  ***************************//
 
 .codehilitetable {
@@ -2656,6 +2605,6 @@ color: #ffffc7; }
 color: #8cd0d3; }
 
 
-//******************************  cnzz  *******************************//
+//****************************  statistic  ****************************//
 
 .statistic { display: none;}

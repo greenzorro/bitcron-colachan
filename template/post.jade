@@ -11,17 +11,6 @@ block content
     	//- 日志详情
         include include/postDetail
         
-        #fb_comments_container
-
-        	//- 多说评论框
-        	//- 这部分的colachan.com需要改成你自己的，不然无法正常显示你的评论框
-			.ds-thread(data-thread-key="{{post.url}}", data-title="{{post.title}}", data-url="http://colachan.com{{post.url}}")
-			script
-				var duoshuoQuery = {short_name:"greenzorro"};
-				(function() { var ds = document.createElement('script'); ds.type = 'text/javascript';ds.async = true;
-				ds.src = '//static.duoshuo.com/embed.js';ds.charset = 'UTF-8';
-				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-				})();
-
-			//- 系统评论框
-            //- +utils.html_comments(post)
+    	//- 评论组件
+        include include/comments
+        

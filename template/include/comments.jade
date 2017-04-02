@@ -1,0 +1,23 @@
+//- 评论组件
+
+#comments_container
+
+	//- 系统评论框
+    //- +utils.html_comments(post)
+
+	//- 来必力，请注意每个人的data-uid是不同的，需要更换成自己的id，详见：https://livere.com/insight/myCode
+	#lv-container(data-id="city", data-uid="MTAyMC8yODAxMi80NTg5")
+	script
+		(function(d, s) {
+			var j, e = d.getElementsByTagName(s)[0];
+
+			if (typeof LivereTower === 'function') { return; }
+
+			j = d.createElement(s);
+			j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+			j.async = true;
+
+			e.parentNode.insertBefore(j, e);
+		})(document, 'script');
+	noscript
+		为正常使用来必力评论功能请激活JavaScript

@@ -55,17 +55,3 @@ block content
 					li //-防止最后一项独占一行，太宽影响显示效果
 
 				include include/paginator.jade
-
-		.page_wrap
-			#fb_comments_container
-				.ds-thread(data-thread-key="tools", data-title="小玩意", data-url="http://colachan.com/tools")
-				script
-					var duoshuoQuery = {short_name:"greenzorro"};
-					(function() {
-						var ds = document.createElement('script');
-						ds.type = 'text/javascript';ds.async = true;
-						ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-						ds.charset = 'UTF-8';
-						(document.getElementsByTagName('head')[0] 
-						 || document.getElementsByTagName('body')[0]).appendChild(ds);
-					})();
