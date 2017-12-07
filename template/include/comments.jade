@@ -8,10 +8,6 @@
 	//- disqus，请注意每个人的s.src是不同的，需要更换成自己的id，详见：https://help.disqus.com/customer/portal/articles/472097-universal-embed-code
 	#disqus_thread
 	script
-		var disqus_config = function () {
-			this.page.url = 'http://colachan.com' + request.url_without_host;  // Replace PAGE_URL with your page's canonical URL variable
-			this.page.identifier = request.url_without_host; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		};
 		(function() { // DON'T EDIT BELOW THIS LINE
 			var d = document, s = d.createElement('script');
 			s.src = 'https://greenzorro.disqus.com/embed.js';
