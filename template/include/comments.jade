@@ -5,19 +5,19 @@
 	//- 系统评论框
     //- +utils.html_comments(post)
 
-	//- 来必力，请注意每个人的data-uid是不同的，需要更换成自己的id，详见：https://livere.com/insight/myCode
-	#lv-container(data-id="city", data-uid="MTAyMC8yODAxMi80NTg5")
+	//- disqus，请注意每个人的s.src是不同的，需要更换成自己的id，详见：https://help.disqus.com/customer/portal/articles/472097-universal-embed-code
+	#disqus_thread
 	script
-		(function(d, s) {
-			var j, e = d.getElementsByTagName(s)[0];
-
-			if (typeof LivereTower === 'function') { return; }
-
-			j = d.createElement(s);
-			j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-			j.async = true;
-
-			e.parentNode.insertBefore(j, e);
-		})(document, 'script');
+		var disqus_config = function () {
+			this.page.url = 'http://colachan.com' + request.url_without_host;  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = request.url_without_host; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://greenzorro.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
 	noscript
-		为正常使用来必力评论功能请激活JavaScript
+		Please enable JavaScript to view the 
+		a(href="https://disqus.com/?ref_noscript") comments powered by Disqus.

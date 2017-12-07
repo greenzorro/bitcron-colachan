@@ -1302,19 +1302,19 @@ input, textarea, button {
 
 // phone
 @media only screen and (max-width: $phone_landscape-max){
-	.doc_comments, #lv-container {
+	.doc_comments, #disqus_thread {
 		padding: 0.15rem 0.15rem 0;
 	}
 }
 // pad
 @media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max){
-	.doc_comments, #lv-container {
+	.doc_comments, #disqus_thread {
 		margin: 0.5rem 0.3rem;
 	}
 }
 // pc
 @media only screen and (min-width: $pc-min){
-	.doc_comments, #lv-container {
+	.doc_comments, #disqus_thread {
 		margin: 0.5rem auto;
 	}
 }
