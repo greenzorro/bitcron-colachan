@@ -56,9 +56,6 @@ $pc-min: 1200px;
 @mixin transition-transform ($value1,$value2) {
 	-webkit-transition: -webkit-transform $value1 $value2;
 	transition: transform $value1 $value2;}
-@mixin prefix-transition ($value) {
-	-webkit-transition: -webkit-$value;
-	transition: $value;}
 @mixin animation ($value) {
 	-webkit-animation: $value;
 	animation: $value;}
@@ -394,7 +391,9 @@ input, textarea, button {
 				right: 0;
 				top: 0;
 				z-index: 4;
-				@include transition (width 0.3s $easing1, background 0.3s $easing1);}
+				-webkit-transition: width 0.3s $easing1, background 0.3s $easing1;
+				transition: width 0.3s $easing1, background 0.3s $easing1;
+			}
 		}
 		.title {
 			padding: 0.72rem 0 0.15rem;
@@ -874,7 +873,8 @@ input, textarea, button {
 	position: fixed;
 	right: 0;
 	z-index: 19;
-	@include transition (right 0.3s $easing1, background 0.3s $easing1);
+	-webkit-transition: right 0.3s $easing1, background 0.3s $easing1;
+	transition: right 0.3s $easing1, background 0.3s $easing1;
 }
 .post a.directory_active {
 	background: $primary1;
@@ -1401,13 +1401,21 @@ input, textarea, button {
 		@include flex (1 1 3.2rem);
 		.pic {
 			display: block;
-			span {
-				display: block;
+			height: 1.6rem;
+			overflow: hidden;
+			margin: 0 0.15rem;
+			border-radius: 0.03rem;
+			position: relative;
+			picture {
 				width: 100%;
 				height: 100%;
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: cover;}
+				position: absolute;
+				left: 0;
+				top: -20%;
+				img {
+					width: 100%;
+				}
+			}
 		}
 	}
 }
@@ -1424,7 +1432,19 @@ input, textarea, button {
 				width: 1.8rem;
 				height: 1.8rem;
 				overflow: hidden;
-				border-radius: 50%;}
+				margin: 0;
+				border-radius: 50%;
+				picture {
+					width: auto;
+					height: 100%;
+					left: -0.67rem;
+					top: 0;
+					img {
+						width: auto;
+						height: 100%;
+					}
+				}
+			}
 			h2 {
 				margin: 0.12rem 0;
 				a { font-size: 0.18rem;}
@@ -1442,12 +1462,6 @@ input, textarea, button {
 		li {
 			padding: 0.6rem 0 0;
 			&:last-of-type { padding: 0; }
-			.pic {
-				display: block;
-				height: 1.6rem;
-				margin: 0 0.15rem;
-				span { border-radius: 0.03rem;}
-			}
 			h2 {
 				margin: 0.15rem 0.15rem 0.08rem;
 				a { font-size: 0.18rem;}
@@ -1466,12 +1480,7 @@ input, textarea, button {
 			padding: 0.45rem 0 0;
 			&:last-of-type { padding: 0; }
 			.pic {
-				display: block;
-				height: 1.6rem;
-				overflow: hidden;
-				margin: 0 0.15rem;
-				span {
-					border-radius: 0.03rem;
+				picture {
 					opacity: 0;
 					@include transition-transform (1s, $easing1);
 					@include transform-origin (50% 50%);
@@ -1479,15 +1488,15 @@ input, textarea, button {
 					&:hover { @include transform (scale(1.05));}
 				}
 			}
-			&:nth-child(1) .pic span { @include animation (fadein 1.2s $easing1 0s both);}
-			&:nth-child(2) .pic span { @include animation (fadein 1.2s $easing1 0.05s both);}
-			&:nth-child(3) .pic span { @include animation (fadein 1.2s $easing1 0.1s both);}
-			&:nth-child(4) .pic span { @include animation (fadein 1.2s $easing1 0.15s both);}
-			&:nth-child(5) .pic span { @include animation (fadein 1.2s $easing1 0.2s both);}
-			&:nth-child(6) .pic span { @include animation (fadein 1.2s $easing1 0.25s both);}
-			&:nth-child(7) .pic span { @include animation (fadein 1.2s $easing1 0.3s both);}
-			&:nth-child(8) .pic span { @include animation (fadein 1.2s $easing1 0.35s both);}
-			&:nth-child(9) .pic span { @include animation (fadein 1.2s $easing1 0.4s both);}
+			&:nth-child(1) .pic picture { @include animation (fadein 1.2s $easing1 0s both);}
+			&:nth-child(2) .pic picture { @include animation (fadein 1.2s $easing1 0.05s both);}
+			&:nth-child(3) .pic picture { @include animation (fadein 1.2s $easing1 0.1s both);}
+			&:nth-child(4) .pic picture { @include animation (fadein 1.2s $easing1 0.15s both);}
+			&:nth-child(5) .pic picture { @include animation (fadein 1.2s $easing1 0.2s both);}
+			&:nth-child(6) .pic picture { @include animation (fadein 1.2s $easing1 0.25s both);}
+			&:nth-child(7) .pic picture { @include animation (fadein 1.2s $easing1 0.3s both);}
+			&:nth-child(8) .pic picture { @include animation (fadein 1.2s $easing1 0.35s both);}
+			&:nth-child(9) .pic picture { @include animation (fadein 1.2s $easing1 0.4s both);}
 			h2 {
 				margin: 0.25rem 0.15rem 0.08rem;
 				a { font-size: 0.18rem;}
@@ -1503,12 +1512,18 @@ input, textarea, button {
 //*****************************  movies  ******************************//
 
 #movie {
-	h3 a img {
+	h3 a picture {
+		display: block;
 		width: 94px;
 		height: 150px;
 		border-radius: 0.03rem;
 		opacity: 0;
-		@include animation (fadein 1.2s $easing1 both);}
+		@include animation (fadein 1.2s $easing1 both);
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 	.text {
 		a { line-height: 1.3;}
 		.content p {
@@ -1542,7 +1557,7 @@ input, textarea, button {
 			padding: 0.4rem 0.15rem 0;
 			&:last-of-type { padding: 0.4rem 0.15rem; }
 			.item {
-				h3 a img {
+				h3 a picture {
 					width: 62px;
 					height: 100px;}
 				.text {
@@ -1559,7 +1574,7 @@ input, textarea, button {
 			padding: 0.4rem 0.25rem 0;
 			&:last-of-type { padding: 0.4rem 0.25rem; }
 			.item {
-				h3 a img {
+				h3 a picture {
 					width: 94px;
 					height: 150px;}
 				.text {
@@ -1600,7 +1615,7 @@ input, textarea, button {
 					line-height: 1.2;
 					padding: 3px 0 0.12rem;
 					@include transition (opacity 1s $easing1);
-					img { padding:3px;}
+					picture { padding:3px;}
 				}
 				.text {
 					a {
@@ -2040,9 +2055,13 @@ input, textarea, button {
 			a {
 				display: block;
 				line-height: 0;
-				img {
+				picture {
 					width: 100%;
-					border-radius: 0.03rem;}
+					img {
+						width: 100%;
+						border-radius: 0.03rem;
+					}
+				}
 			}
 			h2 {
 				padding: 0.15rem 0 0.08rem;
@@ -2111,7 +2130,10 @@ input, textarea, button {
 //*********************************************************************//
 
 
-a { @include transition (color 0.5s $easing1, background-color 0.5s $easing1);}
+a {
+	-webkit-transition: color 0.5s $easing1, background-color 0.5s $easing1;
+	transition: color 0.5s $easing1, background-color 0.5s $easing1;
+}
 @-webkit-keyframes fadein {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
