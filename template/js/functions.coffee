@@ -180,7 +180,7 @@ plugin =
                     $target = if $("[name=#{hash}]").length then $("[name=#{hash}]") else $("[id=#{hash}]")
                     if $target.length
                         targetOffset = $target.offset().top
-                        $("html,body").animate { scrollTop: targetOffset - 20 }, 800
+                        $("html,body").animate { scrollTop: targetOffset}, 800
                 else
                     $("html,body").animate { scrollTop: 0 }, 800
 

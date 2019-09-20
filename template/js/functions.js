@@ -215,7 +215,7 @@
             if ($target.length) {
               targetOffset = $target.offset().top;
               return $("html,body").animate({
-                scrollTop: targetOffset - 20
+                scrollTop: targetOffset
               }, 800);
             }
           } else {

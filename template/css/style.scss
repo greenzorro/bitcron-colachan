@@ -4,16 +4,16 @@
 
 
 // value settings
-$dark1: rgba(0,0,0,0.87);
-$dark2: rgba(0,0,0,0.54);
-$dark3: rgba(0,0,0,0.26);
-$dark4: rgba(0,0,0,0.12);
+$dark1: rgba(0,0,0,0.90);
+$dark2: rgba(0,0,0,0.56);
+$dark3: rgba(0,0,0,0.24);
+$dark4: rgba(0,0,0,0.08);
 $light1: rgba(255,255,255,1);
-$light2: rgba(255,255,255,0.54);
-$light3: rgba(255,255,255,0.26);
+$light2: rgba(255,255,255,0.56);
+$light3: rgba(255,255,255,0.24);
 $light4: rgba(255,255,255,0.12);
 $bg1: #fff;
-$bg2: #f5f5f5;
+$bg2: #fafafa;
 $bg3: #eee;
 $bg4: #333;
 $primary1: #31b5bd;
@@ -22,8 +22,8 @@ $primary3: #cdecee;
 $accent1: #df8a7f;
 $accent2: #f5c5bf;
 $accent3: #3c3d60;
-$shadow1: 0 1px 4px rgba(0,0,0,0.35);
-$shadow2: 0 4px 4px rgba(0,0,0,0.35);
+$shadow1: 0 1px 4px rgba(0,0,0,0.12);
+$shadow2: 0 4px 8px rgba(0,0,0,0.12);
 $shadow3: inset 0 0 1px $dark4;
 $bg_img: url(/template/images/bg.jpg);
 $easing1: cubic-bezier(0.15, 0.95, 0.41, 0.95);
@@ -700,33 +700,58 @@ input, textarea, button {
 	img { max-width: 100%;}
 	h1, h2, h3, h4, h5, h6 {
 		line-height: 1.2;
-		margin: 0.5rem 0 0.35rem;
-		font-weight: bold;}
+		padding-top: 0.2rem;
+		margin: 0.4rem 0 0.3rem;
+		font-weight: bold;
+	}
+	h1 { font-size: 0.30rem;}
+	h2 { font-size: 0.24rem;}
+	h3 { font-size: 0.20rem;}
+	h4 { font-size: 0.18rem;}
+	h5 { font-size: 0.16rem;}
+	h6 { font-size: 0.16rem;}
+	h1 {
+		padding-bottom: 0.2rem;
+		border-bottom: 0.04rem solid $primary2;
+	}
 	h2 {
-		padding: 0 0 0 0.15rem;
-		border-left: 0.04rem solid $primary2;
+		padding-left: 0.2rem;
+		position: relative;
+		&:after {
+			content: "";
+			display: block;
+			width: 0.06rem;
+			height: calc(100% - 0.2rem);
+			background: $primary2;
+			border-radius: 0.04rem;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
 	}
 	p, pre, iframe {
 		display: block;
 		line-height: 1.6;
-		margin: 0.15rem 0;
+		margin: 0.2rem 0;
 	}
-	.xiami-player { margin: 0 0 0.25rem;} //虾米音乐播放组件
+	.xiami-player { margin: 0 0 0.2rem;} //虾米音乐播放组件
 	i, em { font-style: italic;}
 	b, strong { font-weight: bold;}
 	ul {
-		margin: 0.25rem 0;
+		margin: 0.2rem 0;
 		padding: 0 0 0 0.3rem;
 		list-style: disc;}
 	ol {
-		margin: 0.25rem 0;
+		margin: 0.2rem 0;
 		padding: 0 0 0 0.3rem;
 		list-style: decimal;}
 	blockquote {
-		padding: 0.15rem 0 0.15rem 0.15rem;
-		margin: 0.25rem 0;
-		background: $bg2;
+		padding: 0.2rem;
+		margin: 0.2rem 0;
+		background: lighten($accent3,66%);
+		border-radius: 0.05rem;
 		font-size: 0.14rem;
+		color: $accent3;
 		position: relative;
 		p { margin: 0;}
 		&:after {
@@ -734,7 +759,7 @@ input, textarea, button {
 			line-height: 1;
 			font-size: 1rem;
 			font-family: "Forum", sans-serif;
-			color: $dark4;
+			color: lighten($accent3,60%);
 			position: absolute;
 			left: -0.08rem;
 			top: -0.2rem;
@@ -743,7 +768,7 @@ input, textarea, button {
 	hr {
 		width: 100%;
 		height: 1px;
-		margin: 0.25rem 0;
+		margin: 0.2rem 0;
 		padding: 0;
 		background: none;
 		border: none;
@@ -751,7 +776,7 @@ input, textarea, button {
 	table {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		margin: 0.25rem 0;
+		margin: 0.2rem 0;
 		width: 100%;
 		max-width: 100%;
 		border-width: 1px;
@@ -777,7 +802,7 @@ input, textarea, button {
 	table tbody > tr:nth-child(odd) > td, table tbody > tr:nth-child(odd) > th {
 		background-color: #f9f9f9;}
 	.gist {
-		margin: 0.25rem 0;
+		margin: 0.2rem 0;
 		font-size: 12px;}
 	.gist table {
 		margin: 0;
@@ -786,32 +811,6 @@ input, textarea, button {
 		font-size: 12px;}
 	.gist table .line-numbers {
 		font-size: 12px;}
-}
-// phone
-@media only screen and (max-width: $phone_landscape-max){
-	.post_body {
-		font-size: 0.2rem;
-		h1, h2, h3, h4, h5, h6 { letter-spacing: 0.004rem;}
-		h1 { font-size: 0.35rem;}
-		h2 { font-size: 0.28rem;}
-		h3 { font-size: 0.24rem;}
-		h4 { font-size: 0.21rem;}
-		h5 { font-size: 0.18rem;}
-		h6 { font-size: 0.16rem;}
-		blockquote { background: $bg3; }
-	}
-}
-// pad and pc
-@media only screen and (min-width: $pad_portrait-min){
-	.post_body {
-		h1, h2, h3, h4, h5, h6 { letter-spacing: -0.003em;}
-		h1 { font-size: 0.35rem;}
-		h2 { font-size: 0.28rem;}
-		h3 { font-size: 0.24rem;}
-		h4 { font-size: 0.21rem;}
-		h5 { font-size: 0.18rem;}
-		h6 { font-size: 0.16rem;}
-	}
 }
 
 
@@ -949,7 +948,7 @@ input, textarea, button {
 	width: 100%;
 	a {
 		display: block;
-		font-size: 0.32rem;
+		font-size: 0.24rem;
 		text-align: center;}
 	.paging {
 		display: block;
@@ -1004,7 +1003,7 @@ input, textarea, button {
 		.paging {
 			width: 33%;
 			.arrow {
-				width: 0.56rem;
+				width: 0.28rem;
 				height: 0.56rem;
 				line-height: 0.56rem;}
 			span { display: none;}
@@ -1031,11 +1030,11 @@ input, textarea, button {
 		.paging {
 			&:hover { color: $primary1;}
 			.arrow {
-				width: 0.64rem;
+				width: 0.32rem;
 				height: 0.64rem;
 				line-height: 0.64rem;}
 			span {
-				max-width: 1.44rem;
+				max-width: 32rem;
 				height: 100%;
 				overflow: hidden;
 				font-size: 0.14rem;}
@@ -1362,18 +1361,11 @@ input, textarea, button {
 	.list {
 		padding: 0.3rem 0;
 		.archive {
-			margin: 0 0 0.3rem;
-			background: $bg1;
-			border-radius: 0.05rem;
-			box-shadow: $shadow1;
+			padding: 0.4rem 0;
+			border-bottom: 1px solid $dark4;
 			.content {
-				padding: 0.4rem;
 				ul li {
 					padding: 0.12rem 0;
-					border-bottom: 1px solid $dark4;
-					&:last-of-type {
-						border: none;
-					}
 				}
 			}
 		}
@@ -1705,7 +1697,8 @@ input, textarea, button {
 				display: block;
 				margin: 0 auto 0.25rem;
 				max-width: 100%;
-				box-shadow: $shadow1;}
+				border: 1px solid $dark4;
+			}
 		}
 	}
 }
@@ -2028,7 +2021,7 @@ input, textarea, button {
 				.item {
 					padding: 0.4rem;
 					margin: 0 0 0.4rem;
-					border: 1px solid $dark4;
+					background: $bg2;
 					border-radius: 0.05rem;
 					.content p { font-size: 0.14rem;}
 				}

@@ -11,7 +11,7 @@ block content
 			entries = get_data(type='post',limit=100,sort='desc').group(group_type)
 
 			for sub_title, posts in entries
-				.archive
+				section.archive
 					.content
 						h1= "~ " + sub_title + " ~"
 						ul
