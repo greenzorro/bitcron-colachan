@@ -111,7 +111,7 @@ body {
 	line-height: 1.6;
 	font-size: 0.16rem;
 	color: $dark1;
-	background: $bg2;}
+	}
 a { @include aColor ($primary1);}
 input, textarea, button {
 	font-family: -apple-system,Helvetica,Arial,"PingFang SC","Source Han Sans SC","Microsoft YaHei","WenQuanYi MicroHei",sans-serif;}
@@ -493,7 +493,7 @@ input, textarea, button {
 							width: 100%;
 							height: 60%;
 							background: $primary1;
-							border-radius: 0.03rem;
+							border-radius: 0.05rem;
 							box-shadow: $shadow1;
 							position: absolute;
 							left: 0;
@@ -577,7 +577,7 @@ input, textarea, button {
 				height: 0.24rem;
 				padding: 0.05rem 0.08rem;
 				border: 1px solid $light2;
-				border-radius: 0.03rem;
+				border-radius: 0.05rem;
 				a {
 					display: inline-block;
 					background: url(/template/images/social.png) no-repeat;
@@ -709,7 +709,7 @@ input, textarea, button {
 	p, pre, iframe {
 		display: block;
 		line-height: 1.6;
-		margin: 0.25rem 0;
+		margin: 0.15rem 0;
 	}
 	.xiami-player { margin: 0 0 0.25rem;} //虾米音乐播放组件
 	i, em { font-style: italic;}
@@ -1010,13 +1010,11 @@ input, textarea, button {
 			span { display: none;}
 		}
 	}
-	.list .pager {
-		background: $bg1;
-		border-radius: 0.03rem;
-		box-shadow: $shadow1;}
 	.detail .pager {
-		background: darken($bg1, 2.3%);
-		border-top: 1px solid $dark4;}
+		margin-top: 0.4rem;
+		border-top: 1px solid $dark4;
+		border-bottom: 1px solid $dark4;
+	}
 	.special .pager {
 		border-top: 1px solid $dark4;
 		border-bottom: 1px solid $dark4;}
@@ -1044,13 +1042,11 @@ input, textarea, button {
 		}
 		.gotop { display: none;}
 	}
-	.list .pager {
-		background: $bg1;
-		border-radius: 0.03rem;
-		box-shadow: $shadow1;}
 	.detail .pager {
-		background: darken($bg1, 2.3%);
-		border-top: 1px solid $dark4;}
+		margin-top: 0.4rem;
+		border-top: 1px solid $dark4;
+		border-bottom: 1px solid $dark4;
+	}
 	.special .pager {
 		display: none;}
 }
@@ -1137,11 +1133,14 @@ input, textarea, button {
 	.list {
 		padding: 0.3rem 0;
 		.post {
-			margin: 0 0 0.3rem;
+			margin: 0.4rem 0;
+			padding-bottom: 0.4rem;
 			background: $bg1;
-			border-radius: 0.03rem;
-			box-shadow: $shadow1;
-			.content { padding: 0.4rem;}
+			border-radius: 0.05rem;
+			border-bottom: 1px solid $dark4;
+			&:last-of-type {
+				margin: 0.4rem 0 0;
+			}
 			.title {
 				margin: 0 0 0.15rem;
 				font-size: 0.3rem;}
@@ -1238,15 +1237,13 @@ input, textarea, button {
 // pad and pc
 @media only screen and (min-width: $pad_portrait-min){
 	.detail {
-		background: $bg1;
-		border-radius: 0.03rem;
-		box-shadow: $shadow1;
-		.content { padding: 0.4rem;}
 		.title {
 			margin: 0 0 0.15rem;
 			padding: 0 0 0.15rem;
 			border-bottom: 1px solid $dark4;
-			font-size: 0.3rem;}
+			font-size: 0.3rem;
+			text-align: center;
+		}
 		.post_body {
 			blockquote p {
 				margin-left: 0.2rem;
@@ -1367,7 +1364,7 @@ input, textarea, button {
 		.archive {
 			margin: 0 0 0.3rem;
 			background: $bg1;
-			border-radius: 0.03rem;
+			border-radius: 0.05rem;
 			box-shadow: $shadow1;
 			.content {
 				padding: 0.4rem;
@@ -1404,7 +1401,7 @@ input, textarea, button {
 			height: 1.6rem;
 			overflow: hidden;
 			margin: 0 0.15rem;
-			border-radius: 0.03rem;
+			border-radius: 0.05rem;
 			position: relative;
 			picture {
 				width: 100%;
@@ -1516,7 +1513,7 @@ input, textarea, button {
 		display: block;
 		width: 94px;
 		height: 150px;
-		border-radius: 0.03rem;
+		border-radius: 0.05rem;
 		opacity: 0;
 		@include animation (fadein 1.2s $easing1 both);
 		img {
@@ -1607,7 +1604,7 @@ input, textarea, button {
 			position: relative;
 			.item {
 				min-height: 190px;
-				border-radius: 0.03rem;
+				border-radius: 0.05rem;
 				position: absolute;
 				top: 0;
 				h3 {
@@ -1717,15 +1714,15 @@ input, textarea, button {
 	#works {
 		.play {
 			padding: 1.5rem 0 1.2rem;
-			background: $bg2;
-			box-shadow:inset 0 0 1.5rem $dark3;
+			background: $bg1;
+			box-shadow:inset 0 0 1rem $dark4;
 			text-align: center;
 			.start {
 				display: block;
 				width: 0.9rem;
 				height: 0.9rem;
 				margin: auto;
-				border: 0.08rem solid $primary1;
+				border: 0.05rem solid $primary1;
 				border-radius: 50%;
 				position: relative;
 				&:after {
@@ -1827,15 +1824,13 @@ input, textarea, button {
 			p { padding: 0.15rem 0;}
 		}
 		.friends {
-			padding: 0.3rem 0 0;
+			padding: 0.6rem 0 0;
 			.column {
 				.item {
-					padding: 0.3rem;
-					background: $bg1;
 					h4 {
 						padding: 0 0 0.15rem;
 						span {
-							padding: 0 0.12rem 0 0;
+							padding: 0 0.05rem 0 0;
 							font-size: 0.25rem;
 							color: $accent1;}
 					}
@@ -1883,9 +1878,9 @@ input, textarea, button {
 			}
 		}
 		.remark .friends .item {
-			margin: 0 0 0.3rem;
-			border-top: 1px solid $dark4;
-			border-bottom: 1px solid $dark4;}
+			margin: 0 0 0.4rem;
+			padding: 0 0.4rem;
+		}
 	}
 }
 // phone_portrait
@@ -1947,11 +1942,11 @@ input, textarea, button {
 			}
 		}
 		.remark .friends {
-			padding: 0.3rem 0;
+			padding: 0.4rem 0;
 			.item {
 				width: 70%;
-				margin: 0 auto 0.3rem;
-				box-shadow: $shadow1;}
+				margin: 0 auto 0.4rem;
+			}
 		}
 	}
 }
@@ -2031,8 +2026,10 @@ input, textarea, button {
 				width: 48.5%;
 				&:first-of-type { margin: 0 3% 0 0;}
 				.item {
-					margin: 0 0 0.3rem;
-					box-shadow: $shadow1;
+					padding: 0.4rem;
+					margin: 0 0 0.4rem;
+					border: 1px solid $dark4;
+					border-radius: 0.05rem;
 					.content p { font-size: 0.14rem;}
 				}
 			}
@@ -2059,7 +2056,7 @@ input, textarea, button {
 					width: 100%;
 					img {
 						width: 100%;
-						border-radius: 0.03rem;
+						border-radius: 0.05rem;
 					}
 				}
 			}
@@ -2195,7 +2192,7 @@ a {
 		line-height: 0.5rem;
 		margin: 0 auto;
 		background: $primary1;
-		border-radius: 0.03rem;
+		border-radius: 0.05rem;
 		color: $light1;}
 }
 // phone
@@ -2274,7 +2271,7 @@ a {
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
 }
-.circle_progress .center { width: 180px; height: 180px; background: $bg2; border-radius: 50%; position: absolute; left: 10px; top: 10px; }
+.circle_progress .center { width: 180px; height: 180px; background: $bg1; border-radius: 50%; position: absolute; left: 10px; top: 10px; }
 
 
 //***************************  code highlight  ***************************//
