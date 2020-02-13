@@ -12,13 +12,19 @@
 
 注：还可以[在此下载相关设计资源](https://www.dropbox.com/sh/35zp8ef7t2w4d43/AADSv0YaAHX-74GAG5xUNWIpa?dl=0)，请随意取用，希望你喜欢，需要梯子。
 
-[//]: ## 深色版
+；## 深色版
 
-[//]: ![]()
+；![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/dark-home.jpg)
 
-[//]: 隆重感谢[Hubert](https://www.hubertwang.me/)，在此基础上创造了深色版，一并提交上来了。浅色版与深色版在同一套模板内，不是两套模板。这深色版不简单，不只是改改颜色而已。它能跟随系统的颜色模式（比如Mac与iOS）变化而改变，如果你的访客设置了深浅模式自动切换，那么Ta在看你博客时也能无缝衔接！
+；![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/dark-detail.jpg)
 
-[//]: 深色版的设计很用心，可以看到甚至对图片做了处理，在深色模式下图片有反色效果。截图来自iPad。
+；隆重感谢[Hubert](https://www.hubertwang.me/)，在此基础上创造了深色版，一并提交上来了。浅色版与深色版在同一套模板内，不是两套模板。这深色版不简单，不只是改改颜色而已。它能跟随系统的颜色模式（比如Mac与iOS）变化而改变，如果你的访客设置了深浅模式自动切换，那么Ta在看你博客时也能无缝衔接！
+
+；深色版的设计很用心，可以看到甚至对图片做了处理，在深色模式下图片有反色效果。截图来自iPad。
+
+；![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/compare-light.png)
+
+；![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/compare-dark.png)
 
 ## 写给从Farbox过来的朋友
 
