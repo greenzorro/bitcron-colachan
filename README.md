@@ -1,8 +1,8 @@
 ## 可乐橙的Bitcron博客模版源码
 
-完整样式可以预览我的博客[colachan.com](http://colachan.com/)
+效果如下，完整样式可以预览我的博客[colachan.com](http://colachan.com/)
 
-[//]: ![]()
+![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/light-home.jpg)
 
 可乐橙要提醒一下，这是[Bitcron](https://bitcron.com/)模板，它不能用在wordpress或其他博客系统中。
 
@@ -13,6 +13,8 @@
 注：还可以[在此下载相关设计资源](https://www.dropbox.com/sh/35zp8ef7t2w4d43/AADSv0YaAHX-74GAG5xUNWIpa?dl=0)，请随意取用，希望你喜欢，需要梯子。
 
 [//]: ## 深色版
+
+[//]: ![]()
 
 [//]: 隆重感谢[Hubert](https://www.hubertwang.me/)，在此基础上创造了深色版，一并提交上来了。浅色版与深色版在同一套模板内，不是两套模板。这深色版不简单，不只是改改颜色而已。它能跟随系统的颜色模式（比如Mac与iOS）变化而改变，如果你的访客设置了深浅模式自动切换，那么Ta在看你博客时也能无缝衔接！
 
