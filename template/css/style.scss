@@ -12,16 +12,27 @@ $light1: rgba(255,255,255,1);
 $light2: rgba(255,255,255,0.56);
 $light3: rgba(255,255,255,0.24);
 $light4: rgba(255,255,255,0.12);
+$lightdark1: rgba(255,255,255,1);
+$lightdark2: rgba(255,255,255,0.87);
+$lightdark3: rgba(255,255,255,0.6);
+$lightdark4: rgba(255,255,255,0.54);
 $bg1: #fff;
 $bg2: #fafafa;
 $bg3: #eee;
 $bg4: #333;
+$bgdark1: rgba(0,0,0,1);
+$bgdark2: #121212;
+$bgdark3: #232323;
 $primary1: #31b5bd;
 $primary2: #83cace;
 $primary3: #cdecee;
+$primarydark1: #24858a;
+$primarydark2: #6ba2a5;
+$primarydark3: #a3b9bb;
 $accent1: #df8a7f;
 $accent2: #f5c5bf;
 $accent3: #3c3d60;
+$accentdark3: #606097;
 $shadow1: 0 1px 4px rgba(0,0,0,0.12);
 $shadow2: 0 4px 8px rgba(0,0,0,0.12);
 $shadow3: inset 0 0 1px $dark4;
@@ -2517,3 +2528,243 @@ color: #8cd0d3; }
 //****************************  statistic  ****************************//
 
 .statistic { display: none;}
+
+
+//*********************************************************************//
+//                             dark mode                               //
+//*********************************************************************//
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: $bgdark1;
+		color: $lightdark3;
+		.post_body .toggleBtns button {
+			color: $lightdark2;
+		}
+	}
+	.header {
+		background-color: $bgdark3;
+	}
+	.footer p {
+		color: $lightdark3;
+		a {
+			color: $primary1;
+		}
+	}
+	.pager {
+		background-color: $bgdark2;
+		.gotop {color: $lightdark2;}
+	}
+	.detail {
+		background-color: $bgdark2;
+		.info {
+			.date, .visitors {
+				color: $lightdark2;
+			}
+		}
+		.pager {
+			background: $bgdark2;
+			border-top: 1px solid $bgdark3;
+			border-bottom: 1px solid $bgdark3;
+			.gotop, .pre, .next {
+				color: $lightdark2;
+			}
+		}
+		.post_body {
+			.cardx {
+				background-color: $bgdark3;
+			}
+			blockquote {
+				background-color: $bgdark3;
+			}
+			blockquote:after {
+				color: rgba(255, 255, 255, 0.12);
+			}
+			code {
+				background: rgba(255, 255, 255, 0.1);
+			}
+			.toc {
+				background: $bg4;
+				a {
+					color: $lightdark2;
+				}
+				& > ul {
+					& > li {
+						& > a {
+							color: $lightdark2;
+						}
+					}
+				}
+			}
+		}
+	}
+	.post_body {
+		h2 {
+			color: $lightdark2;
+		}
+		h2:after {
+			background-color: $primarydark2;
+		}
+		img.inverse {
+			-webkit-filter: invert(100%) hue-rotate(180deg);
+			filter: invert(100%) hue-rotate(180deg);
+		}
+		table{
+			th {
+				background-color: $bg4;
+				color: $lightdark2;
+			}
+			tbody > tr:nth-child(odd) > td, .post_body table tbody > tr:nth-child(odd) > th {
+				background-color: $bgdark1;
+			}
+		}
+		blockquote {
+			color: $accentdark3;
+		}
+	} 
+	.list {
+		.post {
+			background-color: $bgdark2;
+			.info {
+				.date, .visitors {
+					color: $lightdark2;
+				}
+			}
+		}
+		.pager {
+			background: $bgdark2;
+			border-top: 1px solid $bgdark3;
+			border-bottom: 1px solid $bgdark3;
+			.paging {
+				color: $lightdark2;
+				&:hover {
+					color: $lightdark3;
+				}
+			}
+		}
+	}
+	#new_comment_form {
+		background: $bgdark2 !important;
+		textarea {color: $lightdark2;}
+		.input_body {
+			background-color: $bgdark2 !important;
+			li input {
+				color: $lightdark2 !important;
+			}
+		}
+	}
+	.doc_comments .comments .comment {
+		background-color: $bgdark2 !important;
+		.author b {
+			background-color: $bgdark2 !important;
+			color: $lightdark2 !important;
+			text-decoration: underline !important;
+		}
+	}
+	.circle_progress{
+		.center {
+			background-color: $bgdark2;
+		}
+		.pie_left, .circle_progress .pie_right {
+			background-color: $bgdark1;
+		}
+	} 
+	#about .remark .friends .column .item {
+		background-color: $bgdark2;
+	}
+	#tools {
+		h1.title {
+			color: $lightdark1;
+		}
+		p.intro, h2 {
+			color: $lightdark2;
+		}
+		ul li p {
+			color: $lightdark3;
+		}
+	} 
+	a {
+		color: $primarydark1;
+	}
+}
+
+// phone
+@media only screen and (max-width: $phone_landscape-max) and (prefers-color-scheme: dark) {
+	.header {
+		background-color: $bgdark3;
+		.menu .icon-icon_menu { background-color: $bgdark3;}
+		.menu_active .icon-icon_menu { background-color: $bg4; color: $lightdark3;}
+		.menu_wrapper {
+			background-color: $bg4;
+			.categories{
+				border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+				li a {
+					color: $lightdark2;
+				}
+			} 
+			.nav li a {
+				color: $lightdark2;
+			}
+			.nav a {
+				border-bottom: 1px solid rgba(255, 255, 255, 0.12)
+			}
+		}
+	}
+	.list {
+		.text .content .title, .img .content .title {
+			a {
+				color: $lightdark1;
+			}
+			a:visited {
+				color: $lightdark2;
+			}
+		}
+	} 
+	.detail {
+		border-top: 1.5rem solid $bgdark1;
+		background-color: $bgdark1;
+	}
+	.post a.directory {
+		background: $primarydark2;
+	}
+}
+
+// pad
+@media only screen and (min-width: $pad_portrait-min) and (max-width: $pad_landscape-max) and (prefers-color-scheme: dark) {
+	body .detail {
+		.content {
+			padding: 0.4rem;
+		}
+		.title {
+			color: $lightdark1;
+		}
+	} 
+	.list .post {
+		padding: 0.4rem;
+	}
+}
+
+// pc
+@media only screen and (min-width: $pc-min) and (prefers-color-scheme: dark) {
+	body .detail {
+		.content {
+			padding: 0.4rem;
+		}
+		.title {
+			color: $lightdark1;
+		}
+	}
+	.detail .post_body .toc {
+		a:hover {
+			background-color: $bgdark2;
+		}
+	}
+	.post a.directory {
+		&:hover {
+			background: $bgdark2;
+		}
+	}
+	.list .post {
+		padding: 0.4rem;
+	}
+}

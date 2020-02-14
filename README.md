@@ -12,7 +12,7 @@
 
 注：还可以[在此下载相关设计资源](https://www.dropbox.com/sh/35zp8ef7t2w4d43/AADSv0YaAHX-74GAG5xUNWIpa?dl=0)，请随意取用，希望你喜欢，需要梯子。
 
-<!-- ## 深色版
+## 深色版
 
 ![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/dark-home.jpg)
 
@@ -26,7 +26,7 @@
 
 ![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/compare-light.png)
 
-![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/compare-dark.png) -->
+![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/compare-dark.png)
 
 ## 写给从 Farbox 过来的朋友
 
