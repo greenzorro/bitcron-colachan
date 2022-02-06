@@ -1,4 +1,4 @@
-## 可乐橙的Bitcron博客模版源码
+## Bitcron博客模版源码
 
 效果如下，完整样式可以预览我的博客 [colachan.com](http://colachan.com/)
 
