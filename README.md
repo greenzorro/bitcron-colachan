@@ -1,12 +1,12 @@
 ## Bitcron博客模版源码
 
-效果如下，完整样式可以预览我的博客 [colachan.com](http://colachan.com/)
+效果如下，完整样式可以预览Huburt的博客 [https://www.hubertwang.me/](https://www.hubertwang.me/)
 
 ![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/light-home.jpg)
 
-可乐橙要提醒一下，这是 [Bitcron](https://bitcron.com/) 模板，它不能用在 wordpress 或其他博客系统中。
+要提醒一下，这是 [Bitcron](https://bitcron.com/) 模板，它不能用在 wordpress 或其他博客系统中。
 
-老实说这不是个多么灵活的模板，没有自定义背景图，没有自定义主题颜色，而且多数内容都是静态的，基本是按照可乐橙自己的需求定制的。
+老实说这不是个多么灵活的模板，没有自定义背景图，没有自定义主题颜色，而且多数内容都是静态的，基本是按照我自己的需求定制的。
 
 但是我相信，既然你有兴趣采用 Bitcron 这套博客系统，一定是个热爱钻研之人，水平一定在我之上，将它改造成你的专属模版一定不在话下。
 
