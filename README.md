@@ -1,12 +1,12 @@
-## Bitcron博客模版源码
+## Bitcron博客主题源码
 
 效果如下，完整样式可以预览Huburt的博客 [https://www.hubertwang.me/](https://www.hubertwang.me/)
 
 ![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/light-home.jpg)
 
-要提醒一下，这是 [Bitcron](https://bitcron.com/) 模板，它不能用在 wordpress 或其他博客系统中。
+要提醒一下，这是 [Bitcron](https://bitcron.com/) 主题，它不能用在 wordpress 或其他博客系统中。
 
-老实说这不是个多么灵活的模板，没有自定义背景图，没有自定义主题颜色，而且多数内容都是静态的，基本是按照我自己的需求定制的。
+老实说这不是个多么灵活的主题，没有自定义背景图，没有自定义主题颜色，而且多数内容都是静态的，基本是按照我自己的需求定制的。
 
 但是我相信，既然你有兴趣采用 Bitcron 这套博客系统，一定是个热爱钻研之人，水平一定在我之上，将它改造成你的专属模版一定不在话下。
 
@@ -20,7 +20,7 @@
 
 ![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/dark-detail.jpg)
 
-隆重感谢 [Hubert](https://www.hubertwang.me/)，在此基础上创造了深色版，一并提交上来了。浅色版与深色版在同一套模板内，不是两套模板。这深色版不简单，不只是改改颜色而已。它能跟随系统的颜色模式（比如 Mac 与 iOS）变化而改变，如果你的访客设置了深浅模式自动切换，那么 Ta 在看你博客时也能无缝衔接！
+隆重感谢 [Hubert](https://www.hubertwang.me/)，在此基础上创造了深色版，一并提交上来了。浅色版与深色版在同一套主题内，不是两套主题。这深色版不简单，不只是改改颜色而已。它能跟随系统的颜色模式（比如 Mac 与 iOS）变化而改变，如果你的访客设置了深浅模式自动切换，那么 Ta 在看你博客时也能无缝衔接！
 
 可以看到甚至对图片做了处理，在深色模式下图片有反色效果。截图来自iPad。
 
@@ -32,7 +32,7 @@
 
 应该有些朋友是从 Farbox 过来的，Bitcron 与 Farbox 是同一个作者，这套博客系统可以说是Farbox的升级重制版。虽然外表看起来没有多大的变化，但是系统底层可以说是翻天覆地，能够创造的可能性比 Farbox 要大得多。
 
-如果你之前有自己的 Farbox 模板，迁移过来也并不难。粗略估计，Farbox 模板想用在 Bitcron 里，需要改动的代码量不会超过5%。只是你需要仔细看看 Bitcron 的 API，细微差异还是有的。
+如果你之前有自己的 Farbox 主题，迁移过来也并不难。粗略估计，Farbox 主题想用在 Bitcron 里，需要改动的代码量不会超过5%。只是你需要仔细看看 Bitcron 的 API，细微差异还是有的。
 
 ## FAQ
 
