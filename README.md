@@ -28,12 +28,6 @@
 
 ![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/compare-dark.png)
 
-## 写给从 Farbox 过来的朋友
-
-应该有些朋友是从 Farbox 过来的，Bitcron 与 Farbox 是同一个作者，这套博客系统可以说是Farbox的升级重制版。虽然外表看起来没有多大的变化，但是系统底层可以说是翻天覆地，能够创造的可能性比 Farbox 要大得多。
-
-如果你之前有自己的 Farbox 主题，迁移过来也并不难。粗略估计，Farbox 主题想用在 Bitcron 里，需要改动的代码量不会超过5%。只是你需要仔细看看 Bitcron 的 API，细微差异还是有的。
-
 ## FAQ
 
 ### 首页首屏中央的文字要怎么改？
