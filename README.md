@@ -10,8 +10,6 @@
 
 但是我相信，既然你有兴趣采用 Bitcron 这套博客系统，一定是个热爱钻研之人，水平一定在我之上，将它改造成你的专属模版一定不在话下。
 
-注：还可以[在此下载相关设计资源](https://www.dropbox.com/sh/35zp8ef7t2w4d43/AADSv0YaAHX-74GAG5xUNWIpa?dl=0)，请随意取用，希望你喜欢，需要梯子。
-
 ## 深色版
 
 ![](https://raw.githubusercontent.com/greenzorro/bitcron-colachan/master/preview/dark-home.jpg)
